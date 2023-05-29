@@ -1,0 +1,18 @@
+tag @s remove keylock_unlocked
+
+#store content and name
+data modify entity @s data.Items set from block ~ ~ ~ Items
+data modify entity @s data.CustomName set from block ~ ~ ~ CustomName
+data merge block ~ ~ ~ {Items:[],CustomName:'{"color":"#FEFFFE","text":"Container"}',Lock:"fsjionevnbmeuwrbt0er9bvnwrenvu"}
+
+#store block facing/type
+data merge entity @s {data:{facing:north}}
+execute if predicate keylock:get_type/east run data merge entity @s {data:{facing:east}}
+execute if predicate keylock:get_type/south run data merge entity @s {data:{facing:south}}
+execute if predicate keylock:get_type/west run data merge entity @s {data:{facing:west}}
+execute if predicate keylock:get_type/up run data merge entity @s {data:{facing:up}}
+execute if predicate keylock:get_type/down run data merge entity @s {data:{facing:down}}
+
+data merge entity @s {data:{type:single}}
+execute if predicate keylock:get_type/right run data merge entity @s {data:{type:right}}
+execute if predicate keylock:get_type/left run data merge entity @s {data:{type:left}}

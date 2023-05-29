@@ -1,0 +1,36 @@
+[
+	{
+		"condition": "minecraft:inverted",
+		"term": {
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"equipment": {
+					"mainhand": {
+						"nbt": "{Unbreakable:1b}"
+					}
+				}
+			}
+		}
+	},
+	{
+		"condition": "minecraft:random_chance",
+		"chance": 0.5
+	},
+	{
+		"condition": "minecraft:entity_properties",
+		"entity": "this",
+		"predicate": {
+			"equipment": {
+				"mainhand": {
+					"enchantments": [
+						{
+							"enchantment": "minecraft:unbreaking",
+							"levels": 1
+						}
+					]
+				}
+			}
+		}
+	}
+]

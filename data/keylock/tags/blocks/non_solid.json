@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:void_air",
+    "minecraft:cave_air",
+    "minecraft:air",
+    "#keylock:redstone",
+    "#minecraft:banners",
+    "#minecraft:signs",
+    "#keylock:plants",
+    "minecraft:torch",
+    "#minecraft:wool_carpets",
+    "#minecraft:walls",
+    "#minecraft:slabs",
+    "#minecraft:fences",
+    "#keylock:glass_panes",
+    "minecraft:snow",
+    "minecraft:ladder",
+    "minecraft:soul_torch",
+    "minecraft:soul_lantern",
+    "minecraft:lantern",
+    "minecraft:end_rod",
+    "minecraft:iron_bars",
+    "minecraft:chain",
+    "minecraft:pointed_dripstone",
+    "minecraft:small_amethyst_bud",
+    "minecraft:medium_amethyst_bud",
+    "minecraft:large_amethyst_bud",
+    "minecraft:amethyst_cluster",
+    "#minecraft:candles",
+    "#minecraft:candle_cakes"
+  ]
+}

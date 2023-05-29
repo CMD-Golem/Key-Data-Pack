@@ -1,0 +1,3 @@
+execute if entity @s[distance=..5.5] positioned ^ ^ ^0.1 if block ~ ~ ~ #keylock:containers align xyz positioned ~0.5 ~ ~0.5 run function keylock:container/position
+
+execute if entity @s[distance=..5.5] positioned ^ ^ ^0.1 if block ~ ~ ~ #keylock:non_solid run function keylock:detect

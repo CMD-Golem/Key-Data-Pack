@@ -1,0 +1,19 @@
+[
+	{
+		"condition": "minecraft:entity_properties",
+		"entity": "this",
+		"predicate": {
+			"type": "minecraft:item",
+			"nbt": "{Item:{tag:{keylock:1b}}}"
+		}
+	},
+	{
+		"condition": "minecraft:location_check",
+		"offsetY": -1,
+		"predicate": {
+			"block": {
+				"tag": "minecraft:anvil"
+			}
+		}
+	}
+]

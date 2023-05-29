@@ -1,0 +1,14 @@
+{
+	"function": "minecraft:copy_nbt",
+	"source": {
+		"type": "minecraft:storage",
+		"source": "keylock:durability"
+	},
+	"ops": [
+		{
+			"source": "durability",
+			"target": "Damage",
+			"op": "replace"
+		}
+	]
+}
