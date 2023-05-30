@@ -30,7 +30,7 @@ execute if entity @s[tag=keylock_locker] if score #message keylock matches 1 run
 tag @a remove keylock_locker
 
 # unlocked container
-execute if entity @s[tag=keylock_unlocker] run scoreboard players remove @s keylock_count 1
+execute if entity @s[tag=keylock_unlocker] if score @s keylock_count matches 1.. run scoreboard players remove @s keylock_count 1
 execute if entity @s[tag=keylock_unlocker] run playsound minecraft:block.iron_door.open block @s ~ ~ ~ 10 0.5
 execute if entity @s[tag=keylock_unlocker] unless score #message keylock matches 1 run title @s actionbar {"text":"Container has been unlocked"}
 execute if entity @s[tag=keylock_unlocker] if score #message keylock matches 1 run tellraw @s {"text":"Container has been unlocked"}
