@@ -1,19 +1,28 @@
 #double container
-execute if predicate keylock:get_type/right if predicate keylock:get_type/north positioned ~-1 ~ ~ run function keylock:container/action
-execute if predicate keylock:get_type/right if predicate keylock:get_type/east positioned ~ ~ ~-1 run function keylock:container/action
-execute if predicate keylock:get_type/right if predicate keylock:get_type/south positioned ~1 ~ ~ run function keylock:container/action
-execute if predicate keylock:get_type/right if predicate keylock:get_type/west positioned ~ ~ ~1 run function keylock:container/action
+execute if predicate keylock:get_type/right if predicate keylock:get_type/north positioned ~-1 ~ ~ run function keylock:container/check
+execute if predicate keylock:get_type/right if predicate keylock:get_type/east positioned ~ ~ ~-1 run function keylock:container/check
+execute if predicate keylock:get_type/right if predicate keylock:get_type/south positioned ~1 ~ ~ run function keylock:container/check
+execute if predicate keylock:get_type/right if predicate keylock:get_type/west positioned ~ ~ ~1 run function keylock:container/check
 
-execute if predicate keylock:get_type/left if predicate keylock:get_type/north positioned ~1 ~ ~ run function keylock:container/action
-execute if predicate keylock:get_type/left if predicate keylock:get_type/east positioned ~ ~ ~1 run function keylock:container/action
-execute if predicate keylock:get_type/left if predicate keylock:get_type/south positioned ~-1 ~ ~ run function keylock:container/action
-execute if predicate keylock:get_type/left if predicate keylock:get_type/west positioned ~ ~ ~-1 run function keylock:container/action
+execute if predicate keylock:get_type/left if predicate keylock:get_type/north positioned ~1 ~ ~ run function keylock:container/check
+execute if predicate keylock:get_type/left if predicate keylock:get_type/east positioned ~ ~ ~1 run function keylock:container/check
+execute if predicate keylock:get_type/left if predicate keylock:get_type/south positioned ~-1 ~ ~ run function keylock:container/check
+execute if predicate keylock:get_type/left if predicate keylock:get_type/west positioned ~ ~ ~-1 run function keylock:container/check
 
-function keylock:container/action
+function keylock:container/check
+
+
+#summon display when setting active
+execute if score #container_type keylock matches 2 as @e[tag=keylock_new] at @s run function keylock:container/display
+
+#finish
+tag @e[tag=keylock_new] remove keylock_new
 
 ## message
 # not your container
-execute if score #execute_code keylock matches 0 run function keylock:container/fail
+execute if score #execute_code keylock matches 0 run playsound minecraft:block.chest.locked block @s ~ ~ ~ 10 1
+execute if score #execute_code keylock matches 0 if score #message keylock matches 1 run tellraw @s ["",{"text":"Container is locked by "},{"selector":"@e[tag=keylock_cloud,distance=..0.1,limit=1]"}]
+execute if score #execute_code keylock matches 0 unless score #message keylock matches 1 run title @s actionbar ["",{"text":"Container is locked by "},{"selector":"@e[tag=keylock_cloud,distance=..0.1,limit=1]"}]
 
 # max count of locked containers reached
 execute if score #execute_code keylock matches 1 run playsound minecraft:block.chest.locked block @s ~ ~ ~ 10 1

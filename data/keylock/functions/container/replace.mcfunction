@@ -3,6 +3,8 @@ execute if block ~ ~-64 ~ #keylock:air run tag @s add keylock_air
 clone ~ ~-1 ~ ~ ~-1 ~ ~ ~-64 ~
 setblock ~ ~-1 ~ minecraft:barrier
 execute positioned ~ ~-1 ~ as @e[tag=keylock_cloud,distance=..0.1] run tag @s add keylock_support_replaced
+execute if score #execute_code keylock matches 40 run tag @s add keylock_unlock_display
+execute if score #execute_code keylock matches 40 positioned ~ ~0.25 ~ run kill @e[tag=keylock_display,distance=..0.1]
 
 tag @s add keylock_support
 

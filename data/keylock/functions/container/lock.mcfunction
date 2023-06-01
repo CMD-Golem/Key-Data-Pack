@@ -16,3 +16,11 @@ execute if predicate keylock:get_type/down run data merge entity @s {data:{facin
 data merge entity @s {data:{type:single}}
 execute if predicate keylock:get_type/right run data merge entity @s {data:{type:right}}
 execute if predicate keylock:get_type/left run data merge entity @s {data:{type:left}}
+
+execute if predicate keylock:get_type/north run scoreboard players set @s keylock_craft 180
+execute if predicate keylock:get_type/east run scoreboard players set @s keylock_craft 270
+execute if predicate keylock:get_type/south run scoreboard players set @s keylock_craft 0
+execute if predicate keylock:get_type/west run scoreboard players set @s keylock_craft 90
+
+execute if predicate keylock:get_type/right run tag @s add keylock_right
+execute if predicate keylock:get_type/left run tag @s add keylock_left
