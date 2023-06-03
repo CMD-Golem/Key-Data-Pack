@@ -10,8 +10,10 @@ tag @s add keylock_support
 
 #restore block
 summon falling_block ~ ~ ~ {Tags:["keylock_falling"],TileEntityData:{CustomName:'{"color":"#FEFFFE","text":"Container"}',Lock:"fsjionevnbmeuwrbt0er9bvnwrenvu"}}
-data modify entity @e[tag=keylock_falling,sort=nearest,limit=1] BlockState.Name set from entity @s data.id
-data modify entity @e[tag=keylock_falling,sort=nearest,limit=1] BlockState.Properties.facing set from entity @s data.facing
-data modify entity @e[tag=keylock_falling,sort=nearest,limit=1] BlockState.Properties.type set from entity @s data.type
+data modify entity @e[tag=keylock_falling,distance=..0.1,limit=1] BlockState.Name set from entity @s data.id
+data modify entity @e[tag=keylock_falling,distance=..0.1,limit=1] BlockState.Properties.facing set from entity @s data.facing
+data modify entity @e[tag=keylock_falling,distance=..0.1,limit=1] BlockState.Properties.type set from entity @s data.type
 
+execute if block ~ ~ ~ #keylock:containers run setblock ~ ~ ~ air
+execute unless block ~ ~ ~ #keylock:air run setblock ~ ~ ~ air destroy
 kill @e[type=item,limit=1,sort=nearest,nbt={Item:{tag:{display:{Name:'{"color":"#FEFFFE","text":"Container"}'}}}}]

@@ -13,7 +13,7 @@ function keylock:container/check
 
 
 #summon display when setting active
-execute if score #container_type keylock matches 2 as @e[tag=keylock_new] at @s run function keylock:container/display
+# execute if score #container_type keylock matches 2 as @e[tag=keylock_new] at @s run function keylock:container/display
 
 #finish
 tag @e[tag=keylock_new] remove keylock_new
