@@ -1,8 +1,10 @@
-#containers  if block ~ ~ ~ #keylock:containers
-execute as @e[tag=keylock_cloud,tag=!keylock_unlocked,tag=!keylock_isdisplay] at @s if score @p[distance=..5] keylock = @s keylock run function keylock:container/unlock
-execute as @e[tag=keylock_isdisplay,tag=!keylock_unlocked] at @s if score @p[distance=..5] keylock = @s keylock run function keylock:container/unlock_display
+#container
+execute as @e[tag=keylock_right,scores={keylock_craft=180}] at @s positioned ~-0.5 ~ ~ run function keylock:container/auto_container
+execute as @e[tag=keylock_right,scores={keylock_craft=270}] at @s positioned ~ ~ ~-0.5 run function keylock:container/auto_container
+execute as @e[tag=keylock_right,scores={keylock_craft=0}] at @s positioned ~0.5 ~ ~ run function keylock:container/auto_container
+execute as @e[tag=keylock_right,scores={keylock_craft=90}] at @s positioned ~ ~ ~0.5 run function keylock:container/auto_container
+execute as @e[tag=keylock_single] at @s run function keylock:container/auto_container
 
-execute as @e[tag=keylock_unlocked] at @s unless entity @a[distance=..5] run function keylock:container/lock
-
-execute as @e[tag=keylock_unlocked,tag=!keylock_support_replaced] at @s unless block ~ ~ ~ #keylock:containers positioned ~ ~0.25 ~ run kill @e[tag=keylock_display,distance=..0.1]
-execute as @e[tag=keylock_unlocked,tag=!keylock_support_replaced] at @s unless block ~ ~ ~ #keylock:containers run kill @s
+# remove locking when block gets broken while unlocked
+execute as @e[tag=keylock_autounlocked,tag=!keylock_replacedby_support,tag=!keylock_replace_support] at @s unless block ~ ~ ~ #keylock:lockable_blocks positioned ~ ~0.25 ~ run kill @e[tag=keylock_display,distance=..0.1]
+execute as @e[tag=keylock_autounlocked,tag=!keylock_replacedby_support,tag=!keylock_replace_support] at @s unless block ~ ~ ~ #keylock:lockable_blocks run kill @s
