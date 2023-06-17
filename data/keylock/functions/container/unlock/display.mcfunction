@@ -2,7 +2,6 @@
 execute if block ~ ~ ~ #keylock:containers run setblock ~ ~ ~ air
 execute unless block ~ ~ ~ #keylock:air run setblock ~ ~ ~ air destroy
 
-execute positioned ~ ~0.25 ~ run kill @e[tag=keylock_display,distance=..0.1]
 tag @s remove keylock_isdisplay
 execute if score #execute_code keylock matches 20 run tag @s add keylock_must_kill
 

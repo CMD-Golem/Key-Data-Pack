@@ -17,4 +17,4 @@ execute as @a[scores={keylock_use=1..}] run scoreboard players reset @s keylock_
 execute unless score #damage keylock matches 1 as @e[type=item,predicate=keylock:repair] at @s if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:gold_ingot"}}] run function keylock:durability/detect
 
 ## run autounlock
-execute if score #auto_key keylock matches 1 run function keylock:auto_key
+execute if score #auto_container keylock matches 1 run function keylock:auto_container
