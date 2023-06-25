@@ -1,7 +1,3 @@
-# remove blocks if there was one at same spot as display
-execute if block ~ ~ ~ #keylock:containers run setblock ~ ~ ~ air
-execute unless block ~ ~ ~ #keylock:air run setblock ~ ~ ~ air destroy
-
 tag @s remove keylock_isdisplay
 execute if score #execute_code keylock matches 20 run tag @s add keylock_must_kill
 

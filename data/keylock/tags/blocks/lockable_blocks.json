@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-	"#keylock:containers"
+	"#keylock:containers",
+	"#keylock:doors"
   ]
 }

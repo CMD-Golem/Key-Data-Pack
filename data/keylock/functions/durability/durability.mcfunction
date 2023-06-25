@@ -11,7 +11,7 @@ execute if predicate keylock:durability/lvl5 run scoreboard players add @s keylo
 
 #store score in storage and copy it on item
 execute store result storage keylock:durability durability int 1 run scoreboard players get @s keylock_craft
-execute unless entity @s[gamemode=creative] run item modify entity @s weapon.mainhand keylock:durability
+item modify entity @s weapon.mainhand keylock:durability
 
 #remove item from inventory if its broken
 execute if predicate keylock:durability/broken run playsound minecraft:entity.item.break player @s

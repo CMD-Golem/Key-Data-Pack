@@ -1,8 +1,13 @@
-# summon falling_block ~ ~ ~ {Time:1,Tags:["keylock_falling"],BlockState:{Properties:{half:lower}}}
-summon falling_block ~ ~ ~ {Time:1,Tags:["keylock_falling"],BlockState:{Properties:{half:upper}}}
-# execute as @e[tag=keylock_falling] run data modify entity @s BlockState.Name set from entity @e[tag=keylock_cloud,limit=1,sort=nearest] data.id
-# execute as @e[tag=keylock_falling] run data modify entity @s BlockState.Properties.facing set from entity @e[tag=keylock_cloud,limit=1,sort=nearest] data.facing
-# execute as @e[tag=keylock_falling] run data modify entity @s BlockState.Properties.type set from entity @e[tag=keylock_cloud,limit=1,sort=nearest] data.type
+# remove blocks if there was one at same spot as display
+execute if block ~ ~ ~ #keylock:doors run setblock ~ ~ ~ air
+execute if block ~ ~1 ~ #keylock:doors run setblock ~ ~ ~ air
+execute unless block ~ ~ ~ #keylock:air run setblock ~ ~ ~ air destroy
+execute unless block ~ ~1 ~ #keylock:air run setblock ~ ~ ~ air destroy
+
+
+#restore blocks
+summon falling_block ~ ~ ~ {Tags:["keylock_falling"],DropItem:0b,BlockState:{Properties:{half:lower}}}
+summon falling_block ~ ~1 ~ {Tags:["keylock_falling"],DropItem:0b,BlockState:{Name:"minecraft:dark_oak_door",Properties:{half:upper}}}
 
 execute as @e[tag=keylock_falling] run data modify entity @s BlockState.Name set value "minecraft:oak_door"
 execute as @e[tag=keylock_falling] run data modify entity @s BlockState.Properties.facing set value "east"

@@ -16,7 +16,7 @@ execute if score #execute_code keylock matches 20 as @e[tag=keylock_container,di
 
 
 ## message
-execute if score #execute_code keylock matches 10 run function keylock:container/lock/message
+execute if score #execute_code keylock matches 10..13 run function keylock:container/lock/message
 execute if score #execute_code keylock matches 20 run function keylock:container/unlock/message
 
 execute if score #execute_code keylock matches ..9 run playsound minecraft:block.chest.locked block @s ~ ~ ~ 10 1
