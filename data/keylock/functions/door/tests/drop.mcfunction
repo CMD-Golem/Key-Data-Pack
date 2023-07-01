@@ -1,0 +1,2 @@
+loot spawn ~ ~ ~ mine ~ ~ ~ minecraft:netherite_pickaxe{Enchantments:[{id:"minecraft:silk_touch",lvl:5s}]}
+execute store result score #test keylock run data get entity @e[type=item,sort=nearest,limit=1] Age

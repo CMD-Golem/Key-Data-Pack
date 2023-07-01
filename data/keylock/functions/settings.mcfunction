@@ -25,6 +25,8 @@ execute if score @s keylock_settings matches 12 run scoreboard players set #doub
 execute if score @s keylock_settings matches 13 run scoreboard players set #double_door keylock 1
 execute if score @s keylock_settings matches 14 run scoreboard players set #auto_door keylock 0
 execute if score @s keylock_settings matches 15 run scoreboard players set #auto_door keylock 1
+execute if score @s keylock_settings matches 16 run scoreboard players set #auto_open keylock 0
+execute if score @s keylock_settings matches 17 run scoreboard players set #auto_open keylock 1
 
 scoreboard players reset @s keylock_settings
 
@@ -67,7 +69,10 @@ tellraw @s {"text":"Door Settings"}
 execute if score #double_door keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 12"}},{"text":" Always open whole double door", "hoverEvent":{"action":"show_text","contents":"Also applies to unlocked doors"}}]
 execute unless score #double_door keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 13"}},{"text":" Always open whole double door", "hoverEvent":{"action":"show_text","contents":"Also applies to unlocked doors"}}]
 
-execute if score #auto_door keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 14"}},{"text":" Enable automatic unlock of doors", "hoverEvent":{"action":"show_text","contents":"Opens the door when player is withhin 2 blocks and locks it again when player moves away"}}]
-execute unless score #auto_door keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 15"}},{"text":" Enable automatic unlock of doors", "hoverEvent":{"action":"show_text","contents":"Opens the door when player is withhin 2 blocks and locks it again when player moves away"}}]
+execute if score #auto_door keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 14"}},{"text":" Enable automatic unlock of doors", "hoverEvent":{"action":"show_text","contents":"Unlocks doors when player is withhin 2 blocks and locks it again when player moves away"}}]
+execute unless score #auto_door keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 15"}},{"text":" Enable automatic unlock of doors", "hoverEvent":{"action":"show_text","contents":"Unlocks doors when player is withhin 2 blocks and locks it again when player moves away"}}]
+
+execute if score #auto_open keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 16"}},{"text":" Enable automatic opening of doors", "hoverEvent":{"action":"show_text","contents":"Opens doors when player is withhin 2 blocks and closes it again when player moves away"}}]
+execute unless score #auto_open keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 17"}},{"text":" Enable automatic opening of doors", "hoverEvent":{"action":"show_text","contents":"Opens doors when player is withhin 2 blocks and closes it again when player moves away"}}]
 
 tellraw @s {"text":""}

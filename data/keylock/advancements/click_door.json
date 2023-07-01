@@ -17,6 +17,6 @@
 		}
 	},
 	"rewards": {
-		"function": "keylock:door/on_click"
+		"function": "keylock:door/tests/on_click"
 	}
 }
