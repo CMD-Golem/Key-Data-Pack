@@ -9,7 +9,8 @@ execute if score #container_type keylock matches 1 as @e[tag=keylock_container,t
 execute as @e[tag=keylock_replace_support] at @s if block ~ ~ ~ #keylock:containers run function keylock:container/replace_support
 
 ## door checks
-execute as @e[tag=keylock_door] at @s unless block ~ ~ ~ #keylock:doors run function keylock:door/test
+execute as @e[tag=keylock_door] at @s if block ~ ~-1 ~ #keylock:air run kill @s
+execute as @e[tag=keylock_door] at @s unless block ~ ~ ~ #keylock:doors run function keylock:open/replace_broken
 
 ## uuid and reset
 execute as @a unless score @s keylock matches 0.. run function keylock:uuid

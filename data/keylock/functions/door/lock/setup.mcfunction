@@ -14,5 +14,5 @@ item modify entity @s weapon.mainhand keylock:delete_lore
 
 #store block type
 loot spawn ~ ~ ~ mine ~ ~ ~ minecraft:netherite_pickaxe{Enchantments:[{id:"minecraft:silk_touch",lvl:5s}]}
-data modify entity @e[tag=keylock_door,distance=..0.1,limit=1] data.id set from entity @e[type=item,limit=1,distance=..2,nbt={Age:0}] Item.id
-kill @e[type=item,limit=1,distance=..2,nbt={Age:0}]
+data modify entity @e[tag=keylock_door,distance=..0.1,limit=1] data.id set from entity @e[type=item,limit=1,distance=..2,nbt={Age:0s}] Item.id
+kill @e[type=item,limit=1,distance=..0.5,nbt={Age:0s}]

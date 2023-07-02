@@ -2,5 +2,5 @@ execute if score @s keylock_count matches 1.. run scoreboard players remove @s k
 execute if score #world keylock_count matches 1.. run scoreboard players remove #world keylock_count 1
 
 playsound minecraft:block.iron_door.open block @s ~ ~ ~ 10 0.5
-execute unless score #message keylock matches 1 run title @s actionbar {"text":"Container has been unlocked"}
-execute if score #message keylock matches 1 run tellraw @s {"text":"Container has been unlocked"}
+execute unless score #message keylock matches 1 run title @s actionbar {"text":"Door has been unlocked"}
+execute if score #message keylock matches 1 run tellraw @s {"text":"Door has been unlocked"}
