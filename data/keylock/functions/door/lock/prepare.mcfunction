@@ -1,3 +1,6 @@
+# close door
+execute if predicate keylock:get_type/open summon marker run function keylock:door/lock/close
+
 # spawn entity when new locked chest
 execute if score #execute_code keylock matches 10 run function keylock:door/lock/setup
 

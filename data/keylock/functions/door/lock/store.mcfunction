@@ -1,10 +1,17 @@
+#store block type
+loot spawn ~ ~ ~ mine ~ ~ ~ minecraft:netherite_pickaxe{Enchantments:[{id:"minecraft:silk_touch",lvl:5s}]}
+data modify entity @s data.id set from entity @e[type=item,limit=1,distance=..2,nbt={Age:0s}] Item.id
+kill @e[type=item,limit=1,distance=..0.5,nbt={Age:0s}]
+
+#store facing
 data merge entity @s {data:{facing:north}}
 execute if predicate keylock:get_type/east run data merge entity @s {data:{facing:east}}
 execute if predicate keylock:get_type/south run data merge entity @s {data:{facing:south}}
 execute if predicate keylock:get_type/west run data merge entity @s {data:{facing:west}}
 
+#store hinge
 data merge entity @s {data:{hinge:right}}
 execute if predicate keylock:get_type/door_left run data merge entity @s {data:{hinge:left}}
 
-data merge entity @s {data:{open:"false"}}
-execute if predicate keylock:get_type/open run data merge entity @s {data:{open:"true"}}
+# data merge entity @s {data:{open:"false"}}
+# execute if predicate keylock:get_type/open run data merge entity @s {data:{open:"true"}}
