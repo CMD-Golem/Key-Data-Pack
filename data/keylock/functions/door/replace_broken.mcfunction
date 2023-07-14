@@ -6,7 +6,7 @@ execute unless block ~ ~1 ~ #keylock:air run setblock ~ ~ ~ air destroy
 
 #restore blocks
 summon falling_block ~ ~ ~ {Tags:["keylock_falling_lower"],DropItem:0b,BlockState:{Properties:{half:lower}}}
-summon falling_block ~ ~1 ~ {Tags:["keylock_falling_upper"],DropItem:0b,BlockState:{Name:"minecraft:dark_oak_door",Properties:{half:upper}}}
+summon falling_block ~ ~1 ~ {Tags:["keylock_falling_upper"],DropItem:0b,BlockState:{Name:"minecraft:oak_door",Properties:{half:upper}}}
 
 data modify entity @e[tag=keylock_falling_lower,distance=..0.1,limit=1] BlockState.Name set from entity @s data.id
 data modify entity @e[tag=keylock_falling_lower,distance=..0.1,limit=1] BlockState.Properties.facing set from entity @s data.facing
