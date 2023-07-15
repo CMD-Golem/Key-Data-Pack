@@ -11,3 +11,6 @@ execute if score #key_name keylock matches 1 as @e[tag=keylock_door,distance=..0
 item modify entity @s weapon.mainhand keylock:copy_name
 data modify entity @e[tag=keylock_door,distance=..0.1,limit=1] CustomName set from entity @s SelectedItem.tag.display.Lore[0]
 item modify entity @s weapon.mainhand keylock:delete_lore
+
+# close door
+execute if predicate keylock:get_type/open as @e[tag=keylock_door,distance=..0.1,limit=1] run tag @s add keylock_closedoor

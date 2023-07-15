@@ -1,5 +1,3 @@
-scoreboard players reset #execute_code keylock
-
 execute unless entity @e[tag=keylock_door,distance=..0.1] run scoreboard players set #execute_code keylock 21
 
 execute if score @s keylock = @e[tag=keylock_door,distance=..0.1,limit=1] keylock run scoreboard players set #execute_code keylock 20

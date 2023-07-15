@@ -1,7 +1,7 @@
 scoreboard players set #execute_code keylock 0
 
 #lock door
-execute unless entity @e[tag=keylock_door,distance=..0.1] unless entity @e[tag=keylock_autounlocked,distance=..0.1] run scoreboard players set #execute_code keylock 10
+execute unless entity @e[tag=keylock_door,distance=..0.1] run scoreboard players set #execute_code keylock 10
 #prevent locking if max locked doors reached
 execute if score @s keylock_count >= #max_player keylock run scoreboard players set #execute_code keylock 1
 execute if score #world keylock_count >= #max_world keylock run scoreboard players set #execute_code keylock 2
@@ -13,25 +13,18 @@ execute if score #key_name keylock matches 1 if score #execute_code keylock matc
 #position
 function keylock:door/check
 
-execute if predicate keylock:get_type/door_right if predicate keylock:get_type/north positioned ~-1 ~ ~ if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/door_left if predicate keylock:get_type/north run function keylock:door/check
-execute if predicate keylock:get_type/door_right if predicate keylock:get_type/east positioned ~ ~ ~-1 if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/door_left if predicate keylock:get_type/east run function keylock:door/check
-execute if predicate keylock:get_type/door_right if predicate keylock:get_type/south positioned ~1 ~ ~ if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/door_left if predicate keylock:get_type/south run function keylock:door/check
-execute if predicate keylock:get_type/door_right if predicate keylock:get_type/west positioned ~ ~ ~1 if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/door_left if predicate keylock:get_type/west run function keylock:door/check
+execute if predicate keylock:get_type/hinge_right if predicate keylock:get_type/north positioned ~-1 ~ ~ if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_left if predicate keylock:get_type/north run function keylock:door/check
+execute if predicate keylock:get_type/hinge_right if predicate keylock:get_type/east positioned ~ ~ ~-1 if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_left if predicate keylock:get_type/east run function keylock:door/check
+execute if predicate keylock:get_type/hinge_right if predicate keylock:get_type/south positioned ~1 ~ ~ if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_left if predicate keylock:get_type/south run function keylock:door/check
+execute if predicate keylock:get_type/hinge_right if predicate keylock:get_type/west positioned ~ ~ ~1 if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_left if predicate keylock:get_type/west run function keylock:door/check
 
-execute if predicate keylock:get_type/door_left if predicate keylock:get_type/north positioned ~1 ~ ~ if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/door_right if predicate keylock:get_type/north run function keylock:door/check
-execute if predicate keylock:get_type/door_left if predicate keylock:get_type/east positioned ~ ~ ~1 if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/door_right if predicate keylock:get_type/east run function keylock:door/check
-execute if predicate keylock:get_type/door_left if predicate keylock:get_type/south positioned ~-1 ~ ~ if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/door_right if predicate keylock:get_type/south run function keylock:door/check
-execute if predicate keylock:get_type/door_left if predicate keylock:get_type/west positioned ~ ~ ~-1 if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/door_right if predicate keylock:get_type/west run function keylock:door/check
+execute if predicate keylock:get_type/hinge_left if predicate keylock:get_type/north positioned ~1 ~ ~ if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_right if predicate keylock:get_type/north run function keylock:door/check
+execute if predicate keylock:get_type/hinge_left if predicate keylock:get_type/east positioned ~ ~ ~1 if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_right if predicate keylock:get_type/east run function keylock:door/check
+execute if predicate keylock:get_type/hinge_left if predicate keylock:get_type/south positioned ~-1 ~ ~ if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_right if predicate keylock:get_type/south run function keylock:door/check
+execute if predicate keylock:get_type/hinge_left if predicate keylock:get_type/west positioned ~ ~ ~-1 if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_right if predicate keylock:get_type/west run function keylock:door/check
 
-# execute if predicate keylock:get_type/open if predicate keylock:get_type/door_right if predicate keylock:get_type/north positioned ~ ~ ~-1 if block ~ ~ ~ #keylock:doors run function keylock:door/check
-# execute if predicate keylock:get_type/open if predicate keylock:get_type/door_right if predicate keylock:get_type/east positioned ~1 ~ ~ if block ~ ~ ~ #keylock:doors run function keylock:door/check
-# execute if predicate keylock:get_type/open if predicate keylock:get_type/door_right if predicate keylock:get_type/south positioned ~ ~ ~1 if block ~ ~ ~ #keylock:doors run function keylock:door/check
-# execute if predicate keylock:get_type/open if predicate keylock:get_type/door_right if predicate keylock:get_type/west positioned ~-1 ~ ~ if block ~ ~ ~ #keylock:doors run function keylock:door/check
 
-# execute if predicate keylock:get_type/open if predicate keylock:get_type/door_left if predicate keylock:get_type/north positioned ~ ~ ~-1 if block ~ ~ ~ #keylock:doors run function keylock:door/check
-# execute if predicate keylock:get_type/open if predicate keylock:get_type/door_left if predicate keylock:get_type/east positioned ~1 ~ ~ if block ~ ~ ~ #keylock:doors run function keylock:door/check
-# execute if predicate keylock:get_type/open if predicate keylock:get_type/door_left if predicate keylock:get_type/south positioned ~ ~ ~1 if block ~ ~ ~ #keylock:doors run function keylock:door/check
-# execute if predicate keylock:get_type/open if predicate keylock:get_type/door_left if predicate keylock:get_type/west positioned ~-1 ~ ~ if block ~ ~ ~ #keylock:doors run function keylock:door/check
+execute as @e[tag=keylock_closedoor] at @s run function keylock:door/lock/close
 
 ## message
 execute if score #execute_code keylock matches 10..13 run function keylock:door/lock/message

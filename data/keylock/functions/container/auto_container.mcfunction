@@ -1,5 +1,7 @@
-scoreboard players reset #execute_code keylock
+execute if score #execute_code keylock matches 0.. run scoreboard players reset #execute_code keylock
 
-execute if entity @s[tag=!keylock_autounlocked] if score @p[distance=..5] keylock = @s keylock at @s run function keylock:container/unlock/check
+execute if entity @s[tag=!keylock_autounlocked] as @p[distance=..5] unless score @s keylock = @e[tag=keylock_container,distance=..0.1,limit=1] keylock_count run function keylock:container/unlock/auto_check
 
-execute if entity @s[tag=keylock_autounlocked] unless entity @a[distance=..5] at @s run function keylock:container/lock/check
+execute as @a[distance=5..6] if score @s keylock = @e[tag=keylock_container,distance=..0.1,limit=1] keylock_count run scoreboard players reset @e[tag=keylock_container,distance=..0.1,limit=1] keylock_count
+
+execute if entity @s[tag=keylock_autounlocked] unless entity @a[distance=..5] run function keylock:container/lock/check

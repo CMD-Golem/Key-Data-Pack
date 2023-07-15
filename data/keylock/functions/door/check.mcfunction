@@ -1,2 +1,2 @@
-execute if score #execute_code keylock matches 10 run function keylock:door/lock/prepare
+execute if score #execute_code keylock matches 10 run function keylock:door/lock/setup
 execute if score #execute_code keylock matches 20 as @e[tag=keylock_door,distance=..0.1] run function keylock:door/unlock/unlock

@@ -1,18 +1,22 @@
 #max_player: maximum count of locked containers per player
 #max_world: maximum count of locked containers per player
 #message: show text in chat (1) or actionbar
-#damage: disable key damage while locking (1)
+#damage: enable key damage while locking (1)
 #key_name: Key with correct name can unlock chest (1)
 
+#enable_containers: enable locking of containers (1)
 #auto_container: automatically unlock blocks when in reach (1)
 #container_type: container only as hologramm (2) or as hologramm when it gets broken (1) or is unbreakable
 
+#enable_doors: enable locking of doors (1)
+#enable_trapgate: enable locking of trapdoors and fence gates (1)
 #double_door: always open bough sides of double door (1) disabled on #auto_open 
 #auto_open: open door when near (1)
 #auto_door: unlock and open door when near (1)
 
-execute if score @s keylock_settings matches 1 run scoreboard players set #damage keylock 1
-execute if score @s keylock_settings matches 2 run scoreboard players set #damage keylock 0
+
+execute if score @s keylock_settings matches 1 run scoreboard players set #damage keylock 0
+execute if score @s keylock_settings matches 2 run scoreboard players set #damage keylock 1
 execute if score @s keylock_settings matches 3 run scoreboard players set #key_name keylock 0
 execute if score @s keylock_settings matches 4 run scoreboard players set #key_name keylock 1
 execute if score @s keylock_settings matches 5 run scoreboard players set #message keylock 0
@@ -28,9 +32,8 @@ execute if score @s keylock_settings matches 14 run scoreboard players set #auto
 execute if score @s keylock_settings matches 15 run scoreboard players set #auto_open keylock 1
 execute if score @s keylock_settings matches 16 run scoreboard players set #auto_door keylock 0
 execute if score @s keylock_settings matches 17 run scoreboard players set #auto_door keylock 1
-
-execute if score @s keylock_settings matches 18 run scoreboard players set #enable_containers keylock 1
-execute if score @s keylock_settings matches 19 run scoreboard players set #enable_containers keylock 0
+execute if score @s keylock_settings matches 18 run scoreboard players set #enable_containers keylock 0
+execute if score @s keylock_settings matches 19 run scoreboard players set #enable_containers keylock 1
 execute if score @s keylock_settings matches 20 run scoreboard players set #enable_doors keylock 0
 execute if score @s keylock_settings matches 21 run scoreboard players set #enable_doors keylock 1
 execute if score @s keylock_settings matches 22 run scoreboard players set #enable_trapgate keylock 0
@@ -42,8 +45,8 @@ tellraw @s {"text":""}
 tellraw @s {"text":""}
 tellraw @s {"text":""}
 tellraw @s {"text":"Key Lock Settings","bold":true}
-execute unless score #damage keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 1"}},{"text":" Enable Key damage on locking"}]
-execute if score #damage keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 2"}},{"text":" Enable Key damage on locking"}]
+execute if score #damage keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 1"}},{"text":" Enable Key damage on locking"}]
+execute unless score #damage keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 2"}},{"text":" Enable Key damage on locking"}]
 
 execute if score #key_name keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 3"}},{"text":" Allow name of Key as password"}]
 execute unless score #key_name keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 4"}},{"text":" Allow name of Key as password"}]
@@ -56,8 +59,8 @@ tellraw @s ["",{"text":"[ ✎ ]","color":"gray","clickEvent":{"action":"suggest_
 
 tellraw @s {"text":""}
 tellraw @s {"text":"Container Settings"}
-execute unless score #enable_containers keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 18"}},{"text":" Enable locking of containers"}]
-execute if score #enable_containers keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 19"}},{"text":" Enable locking of containers"}]
+execute if score #enable_containers keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 18"}},{"text":" Enable locking of containers"}]
+execute unless score #enable_containers keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 19"}},{"text":" Enable locking of containers"}]
 
 
 execute if score #auto_container keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 7"}},{"text":" Enable automatic unlock of containers"}]
