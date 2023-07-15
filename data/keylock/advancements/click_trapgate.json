@@ -29,6 +29,6 @@
 		}
 	},
 	"rewards": {
-		"function": "keylock:enable_trapgate/open/action"
+		"function": "keylock:trapgate/open/action"
 	}
 }

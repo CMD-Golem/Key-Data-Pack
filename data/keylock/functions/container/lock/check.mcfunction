@@ -2,6 +2,8 @@ execute unless score #execute_code keylock matches 10 run scoreboard players set
 
 function keylock:container/lock/prepare
 
+# scoreboard players set #execute_code keylock 11
+
 execute if score #execute_code keylock matches 10 run scoreboard players set #execute_code keylock 11
 execute if score #execute_code keylock matches 13 run scoreboard players set #execute_code keylock 12
 

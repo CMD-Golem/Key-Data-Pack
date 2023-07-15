@@ -11,8 +11,8 @@ execute if entity @e[tag=keylock_trapgate,distance=..0.1] if entity @s[nbt={Sele
 execute if score #key_name keylock matches 1 if score #execute_code keylock matches ..9 if entity @e[tag=keylock_trapgate,distance=..0.1] run function keylock:password_check
 
 #position
-execute if score #execute_code keylock matches 10 run function keylock:trapgate/lock/prepare
-execute if score #execute_code keylock matches 20 as @e[tag=keylock_door,distance=..0.1] run function keylock:trapgate/unlock/unlock
+execute if score #execute_code keylock matches 10 run function keylock:trapgate/lock/setup
+execute if score #execute_code keylock matches 20 as @e[tag=keylock_trapgate,distance=..0.1] run kill @s
 
 ## message
 execute if score #execute_code keylock matches 10..13 run function keylock:trapgate/lock/message

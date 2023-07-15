@@ -10,3 +10,5 @@ execute if entity @s[tag=keylock_left] if score @s keylock_craft matches 0 posit
 execute if entity @s[tag=keylock_left] if score @s keylock_craft matches 90 positioned ~ ~ ~-1 as @e[tag=keylock_container,distance=..0.1] run function keylock:container/unlock/prepare
 
 function keylock:container/unlock/prepare
+
+execute as @e[tag=keylock_replace_support] at @s run setblock ~ ~-1 ~ minecraft:barrier
