@@ -1,4 +1,5 @@
 #custom tool damage by CMD-Golem [cmd-golem.com]
+execute if predicate keylock:durability/creative run return 0
 execute store result score @s keylock_craft run data get entity @s SelectedItem.tag.Damage
 
 #add one damage point if durability allows

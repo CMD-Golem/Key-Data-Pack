@@ -3,12 +3,13 @@ execute if block ~ ~ ~ #keylock:trapgate run setblock ~ ~ ~ air
 execute unless block ~ ~ ~ #keylock:air run setblock ~ ~ ~ air destroy
 
 #replace block underneath
-execute if block ~ ~-64 ~ #keylock:air run tag @s add keylock_air
-clone ~ ~-1 ~ ~ ~-1 ~ ~ ~-64 ~
+execute if block ~ -64 ~ #keylock:air run tag @s add keylock_air
+execute unless block ~ -64 ~ #keylock:air run tag @s add keylock_bedrock
+clone ~ ~-1 ~ ~ ~-1 ~ ~ -64 ~
 setblock ~ ~-1 ~ minecraft:barrier
 
 # dont think that container underneath is broken
-execute positioned ~ ~-1 ~ as @e[tag=keylock_container,distance=..0.1] run tag @s add keylock_replacedby_support
+execute positioned ~ ~-1 ~ as @e[tag=keylock_entity,distance=..0.1] run tag @s add keylock_replacedby_support
 # replace support after falling block
 tag @s add keylock_replace_support
 

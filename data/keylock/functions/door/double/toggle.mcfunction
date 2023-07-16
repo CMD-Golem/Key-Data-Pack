@@ -1,6 +1,6 @@
 # tag @s add keylock_autodoor
 execute if score #toggle_auto keylock matches 1.. run tag @s add keylock_autodoor
-execute if score #toggle_auto keylock matches 2 run tag @s add keylock_autodouble
+# execute if score #toggle_auto keylock matches 2 run tag @s add keylock_autodouble
 
 execute if predicate keylock:get_type/open run data merge entity @s {data:{open:"false"}}
 execute if predicate keylock:get_type/closed run data merge entity @s {data:{open:"true"}}

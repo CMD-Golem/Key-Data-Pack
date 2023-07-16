@@ -12,8 +12,7 @@ execute if score #enable_trapgate keylock matches 1 run function keylock:trapgat
 
 # replace support block for falling block
 execute as @e[tag=keylock_replace_support] at @s if block ~ ~ ~ #keylock:lockable_blocks run function keylock:replace_support
-execute as @e[tag=keylock_air,tag=!keylock_replace_support] run setblock ~ ~-64 ~ minecraft:air
-execute as @e[tag=keylock_bedrock,tag=!keylock_replace_support] run setblock ~ ~-64 ~ minecraft:bedrock
+execute as @e[tag=keylock_clear_support] at @s run function keylock:clear_support
 
 # repair
 execute if score #damage keylock matches 1 as @e[type=item,predicate=keylock:repair] at @s if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:gold_ingot"}}] run function keylock:durability/detect

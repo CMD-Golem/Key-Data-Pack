@@ -1,6 +1,3 @@
-tag @s remove keylock_isdisplay
-execute if score #execute_code keylock matches 20 run tag @s add keylock_must_kill
-
 # summon falling container
 function keylock:container/replace_broken
 

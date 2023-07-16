@@ -1,3 +1,3 @@
-execute if block ~ ~ ~ #keylock:trapgate align xyz positioned ~0.5 ~ ~0.5 unless entity @e[tag=keylock_autogate,distance=..0.1] run function keylock:trapgate/auto_door/detect
-execute unless score #execute_code keylock matches 20.. positioned ^ ^ ^1 if block ~ ~ ~ #keylock:trapgate align xyz positioned ~0.5 ~ ~0.5 unless entity @e[tag=keylock_autogate,distance=..0.1] run function keylock:trapgate/auto_door/detect
-execute unless score #execute_code keylock matches 20.. positioned ^ ^ ^2 if block ~ ~ ~ #keylock:trapgate align xyz positioned ~0.5 ~ ~0.5 unless entity @e[tag=keylock_autogate,distance=..0.1] run function keylock:trapgate/auto_door/detect
+execute if block ~ ~ ~ #keylock:trapgate run function keylock:trapgate/auto_door/prepare
+execute unless score #execute_code keylock matches 20.. positioned ^ ^ ^1 if block ~ ~ ~ #keylock:trapgate run function keylock:trapgate/auto_door/prepare
+execute unless score #execute_code keylock matches 20.. positioned ^ ^ ^2 if block ~ ~ ~ #keylock:trapgate run function keylock:trapgate/auto_door/prepare

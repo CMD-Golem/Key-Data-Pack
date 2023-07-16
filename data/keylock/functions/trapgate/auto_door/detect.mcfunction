@@ -4,8 +4,9 @@ execute if score @s keylock = @e[tag=keylock_trapgate,distance=..0.1,limit=1] ke
 execute unless score #execute_code keylock matches 20.. if entity @s[nbt={SelectedItem:{tag:{keylock_admin:1b}}}] run scoreboard players set #execute_code keylock 20
 execute if score #key_name keylock matches 1 unless score #execute_code keylock matches 20.. run function keylock:password_check
 
-execute positioned ~ ~-1 ~ if entity @e[tag=keylock_replace_support,distance=..0.1] run scoreboard players set #execute_code keylock 1
-execute positioned ~ ~-1 ~ if entity @e[tag=keylock_replace_support,distance=..0.1] run say yds
+
+# execute positioned ~ ~-1 ~ if entity @e[tag=keylock_autogate,distance=..0.1] run scoreboard players set #execute_code keylock 1
+execute positioned ~ ~-1 ~ if entity @e[tag=keylock_replacedby_support,distance=..0.1] run scoreboard players set #execute_code keylock 2
 
 execute if score #auto_open keylock matches 1 if score #execute_code keylock matches 21 summon marker run function keylock:trapgate/auto_door/toggle
 execute if score #auto_door keylock matches 1 if score #execute_code keylock matches 20 summon marker run function keylock:trapgate/auto_door/toggle
