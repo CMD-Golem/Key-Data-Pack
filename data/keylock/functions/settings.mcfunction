@@ -14,7 +14,7 @@
 #auto_open: open door when near (1)
 #auto_door: unlock and open door when near (1)
 
-
+# change settings
 execute if score @s keylock_settings matches 1 run scoreboard players set #damage keylock 0
 execute if score @s keylock_settings matches 2 run scoreboard players set #damage keylock 1
 execute if score @s keylock_settings matches 3 run scoreboard players set #key_name keylock 0
@@ -39,8 +39,11 @@ execute if score @s keylock_settings matches 21 run scoreboard players set #enab
 execute if score @s keylock_settings matches 22 run scoreboard players set #enable_trapgate keylock 0
 execute if score @s keylock_settings matches 23 run scoreboard players set #enable_trapgate keylock 1
 
+execute if score @s keylock_settings matches 7 as @e[tag=keylock_autounlocked,tag=!keylock_replace_support,tag=!keylock_replacedby_support] run function keylock:container/lock/check
+
 scoreboard players reset @s keylock_settings
 
+# message
 tellraw @s {"text":""}
 tellraw @s {"text":""}
 tellraw @s {"text":""}

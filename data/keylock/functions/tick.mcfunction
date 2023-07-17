@@ -1,21 +1,23 @@
 # key use
-execute as @a[scores={keylock_use=1..},nbt={SelectedItem:{tag:{keylock:1b}}}] at @s anchored eyes run function keylock:detect
+execute as @a[predicate=keylock:usage] at @s anchored eyes run function keylock:detect
 
 # container checks
-execute if score #enable_containers keylock matches 1 run function keylock:container/run
+execute if score #enable_containers keylock matches 1 as @e[tag=keylock_container] run function keylock:container/run
 
 # door checks
-execute if score #enable_doors keylock matches 1 run function keylock:door/run
+execute if score #enable_doors keylock matches 1 as @e[tag=keylock_door] run function keylock:door/run
+execute if score #enable_doors keylock matches 1 if predicate keylock:auto_doors_check run function keylock:door/auto_door/run
 
 # trapgate checks
-execute if score #enable_trapgate keylock matches 1 run function keylock:trapgate/run
+execute if score #enable_trapgate keylock matches 1 as @e[tag=keylock_autogate,limit=1] run function keylock:trapgate/run
+execute if score #enable_trapgate keylock matches 1 if predicate keylock:auto_doors_check run function keylock:trapgate/auto_door/run
 
 # replace support block for falling block
 execute as @e[tag=keylock_replace_support] at @s if block ~ ~ ~ #keylock:lockable_blocks run function keylock:replace_support
 execute as @e[tag=keylock_clear_support] at @s run function keylock:clear_support
 
 # repair
-execute if score #damage keylock matches 1 as @e[type=item,predicate=keylock:repair] at @s if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:gold_ingot"}}] run function keylock:durability/detect
+execute if score #damage keylock matches 1 as @e[predicate=keylock:repair] at @s if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:gold_ingot"}}] run function keylock:durability/detect
 
 # uuid
 execute as @a unless score @s keylock matches 0.. run function keylock:uuid
