@@ -38,9 +38,14 @@ execute if score @s keylock_settings matches 20 run scoreboard players set #enab
 execute if score @s keylock_settings matches 21 run scoreboard players set #enable_doors keylock 1
 execute if score @s keylock_settings matches 22 run scoreboard players set #enable_trapgate keylock 0
 execute if score @s keylock_settings matches 23 run scoreboard players set #enable_trapgate keylock 1
+execute if score @s keylock_settings matches 24 run scoreboard players set #show_locked keylock 0
+execute if score @s keylock_settings matches 25 run scoreboard players set #show_locked keylock 1
 
-execute if score @s keylock_settings matches 7 as @e[tag=keylock_autounlocked,tag=!keylock_replace_support,tag=!keylock_replacedby_support] run function keylock:container/lock/check
+# lock auto unlocked chests when setting is turend off
+execute if score #execute_code keylock matches 0.. run scoreboard players reset #execute_code keylock
+execute if score @s keylock_settings matches 7 as @e[tag=keylock_autounlocked,tag=!keylock_replace_support,tag=!keylock_replacedby_support] at @s run function keylock:container/lock/check
 
+#reset
 scoreboard players reset @s keylock_settings
 
 # message
@@ -53,6 +58,9 @@ execute unless score #damage keylock matches 1 run tellraw @s ["",{"text":"[ ❌
 
 execute if score #key_name keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 3"}},{"text":" Allow name of Key as password"}]
 execute unless score #key_name keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 4"}},{"text":" Allow name of Key as password"}]
+
+execute if score #show_locked keylock matches 1 run tellraw @s ["",{"text":"[ ✔ ]","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 24"}},{"text":" Show padlock on locked blocks"}]
+execute unless score #show_locked keylock matches 1 run tellraw @s ["",{"text":"[ ❌ ]","color":"red","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 25"}},{"text":" Show padlock on locked blocks"}]
 
 execute if score #message keylock matches 1 run tellraw @s ["",{"text":"[ ⇔ ]","color":"gray","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 5"}},{"text":" Show locking messages in chat"}]
 execute unless score #message keylock matches 1 run tellraw @s ["",{"text":"[ ⇔ ]","color":"gray","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 6"}},{"text":" Show locking messages in actionbar"}]

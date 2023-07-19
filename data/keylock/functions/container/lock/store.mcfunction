@@ -22,6 +22,6 @@ execute if predicate keylock:get_type/east run scoreboard players set @s keylock
 execute if predicate keylock:get_type/south run scoreboard players set @s keylock_craft 0
 execute if predicate keylock:get_type/west run scoreboard players set @s keylock_craft 90
 
-execute if predicate keylock:get_type/type_single run tag @s add keylock_single
-execute if predicate keylock:get_type/type_right run tag @s add keylock_right
-execute if predicate keylock:get_type/type_left run tag @s add keylock_left
+execute if predicate keylock:get_type/type_single run scoreboard players set @s keylock_use 1
+execute if predicate keylock:get_type/type_right run scoreboard players set @s keylock_use 2
+execute if predicate keylock:get_type/type_left run scoreboard players set @s keylock_use 3
