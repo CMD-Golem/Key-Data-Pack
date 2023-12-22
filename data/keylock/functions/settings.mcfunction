@@ -41,10 +41,6 @@ execute if score @s keylock_settings matches 23 run scoreboard players set #enab
 execute if score @s keylock_settings matches 24 run scoreboard players set #show_locked keylock 0
 execute if score @s keylock_settings matches 25 run scoreboard players set #show_locked keylock 1
 
-# lock auto unlocked chests when setting is turend off
-execute if score #execute_code keylock matches 0.. run scoreboard players reset #execute_code keylock
-execute if score @s keylock_settings matches 7 as @e[tag=keylock_autounlocked,tag=!keylock_replace_support,tag=!keylock_replacedby_support] at @s run function keylock:container/lock/check
-
 #reset
 scoreboard players reset @s keylock_settings
 

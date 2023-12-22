@@ -1,5 +1,5 @@
 #setup
-summon minecraft:marker ~ ~ ~ {Tags:["keylock_door","keylock_entity"],data:{open:"false"}}
+summon minecraft:marker ~ ~ ~ {Tags:["keylock_door","keylock_entity"],data:{block:{open:"false"}}}
 scoreboard players operation @e[tag=keylock_door,distance=..0.1] keylock = @s keylock
 execute as @e[tag=keylock_door,distance=..0.1] run function keylock:door/lock/store
 
@@ -13,4 +13,4 @@ data modify entity @e[tag=keylock_door,distance=..0.1,limit=1] CustomName set fr
 item modify entity @s weapon.mainhand keylock:delete_lore
 
 # close door
-execute if predicate keylock:get_type/open as @e[tag=keylock_door,distance=..0.1,limit=1] run tag @s add keylock_closedoor
+execute if predicate keylock:get_type/open as @e[tag=keylock_door,distance=..0.1,limit=1] run function keylock:door/lock/close

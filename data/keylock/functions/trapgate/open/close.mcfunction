@@ -1,5 +1,5 @@
-execute as @e[tag=keylock_trapgate,distance=..0.1] run function keylock:trapgate/replace_broken
-execute as @e[tag=keylock_trapgate,distance=0.1..2] at @s run function keylock:trapgate/replace_broken
+execute as @e[tag=keylock_trapgate,distance=..0.1] run function keylock:trapgate/replace_broken with entity @s data.block
+execute as @e[tag=keylock_trapgate,distance=0.1..2] at @s run function keylock:trapgate/replace_broken with entity @s data.block
 
 # not your trapgate
 execute if score #message keylock matches 1 run tellraw @s ["",{"text":"Block is locked by "},{"selector":"@e[tag=keylock_trapgate,distance=..0.1,limit=1]"}]

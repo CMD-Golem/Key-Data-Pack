@@ -5,11 +5,11 @@ execute as @a[predicate=keylock:usage] at @s anchored eyes run function keylock:
 execute if score #enable_containers keylock matches 1 as @e[tag=keylock_container] run function keylock:container/run
 
 # door checks
-execute if score #enable_doors keylock matches 1 as @e[tag=keylock_door] run function keylock:door/run
+execute if score #enable_doors keylock matches 1 as @e[tag=keylock_door] at @s run function keylock:door/run
 execute if score #enable_doors keylock matches 1 if predicate keylock:auto_doors_check run function keylock:door/auto_door/run
 
 # trapgate checks
-execute if score #enable_trapgate keylock matches 1 as @e[tag=keylock_autogate,limit=1] run function keylock:trapgate/run
+execute if score #enable_trapgate keylock matches 1 as @e[tag=keylock_autogate,limit=1] at @s run function keylock:trapgate/run
 execute if score #enable_trapgate keylock matches 1 if predicate keylock:auto_doors_check run function keylock:trapgate/auto_door/run
 
 # replace support block for falling block

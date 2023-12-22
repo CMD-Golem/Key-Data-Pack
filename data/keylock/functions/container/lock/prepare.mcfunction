@@ -1,9 +1,3 @@
-# spawn entity when new locked chest
-# execute if score #execute_code keylock matches 10..11 run function keylock:container/lock/setup
-
-# only store items for auto key
-# execute if score #execute_code keylock matches 12..13 as @e[tag=keylock_container,distance=..0.1] run function keylock:container/lock/store
-
 # store item
 execute if score #execute_code keylock matches 12..13 as @e[tag=keylock_container,distance=..0.1] run function keylock:container/lock/store
 execute unless entity @e[tag=keylock_container,distance=..0.1] run function keylock:container/lock/setup

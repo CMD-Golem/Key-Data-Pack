@@ -7,7 +7,7 @@ execute if score @s keylock_count >= #max_player keylock run scoreboard players 
 execute if score #world keylock_count >= #max_world keylock run scoreboard players set #execute_code keylock 2
 #unlock door
 execute if score @s keylock = @e[tag=keylock_door,distance=..0.1,limit=1] keylock run scoreboard players set #execute_code keylock 20
-execute if entity @e[tag=keylock_door,distance=..0.1] if entity @s[nbt={SelectedItem:{tag:{keylock_admin:1b}}}] run scoreboard players set #execute_code keylock 20
+execute if score #execute_code keylock matches ..9 if entity @e[tag=keylock_door,distance=..0.1] if entity @s[nbt={SelectedItem:{tag:{keylock_admin:1b}}}] run scoreboard players set #execute_code keylock 20
 execute if score #key_name keylock matches 1 if score #execute_code keylock matches ..9 if entity @e[tag=keylock_door,distance=..0.1] run function keylock:password_check
 
 #position
@@ -22,9 +22,6 @@ execute if predicate keylock:get_type/hinge_left if predicate keylock:get_type/n
 execute if predicate keylock:get_type/hinge_left if predicate keylock:get_type/east positioned ~ ~ ~1 if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_right if predicate keylock:get_type/east run function keylock:door/check
 execute if predicate keylock:get_type/hinge_left if predicate keylock:get_type/south positioned ~-1 ~ ~ if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_right if predicate keylock:get_type/south run function keylock:door/check
 execute if predicate keylock:get_type/hinge_left if predicate keylock:get_type/west positioned ~ ~ ~-1 if block ~ ~ ~ #keylock:doors if predicate keylock:get_type/hinge_right if predicate keylock:get_type/west run function keylock:door/check
-
-
-execute as @e[tag=keylock_closedoor] at @s run function keylock:door/lock/close
 
 ## message
 execute if score #execute_code keylock matches 10..13 run function keylock:door/lock/message
