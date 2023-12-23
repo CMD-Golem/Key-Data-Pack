@@ -10,7 +10,6 @@
 	"minecraft:shulker_box",
 	"minecraft:dispenser",
 	"minecraft:dropper",
-    "minecraft:barrel",
-	"minecraft:brewing_stand"
+    "minecraft:barrel"
   ]
 }

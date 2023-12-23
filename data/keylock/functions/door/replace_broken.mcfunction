@@ -5,8 +5,8 @@ execute unless block ~ ~ ~ #keylock:air run setblock ~ ~ ~ air destroy
 execute unless block ~ ~1 ~ #keylock:air run setblock ~ ~ ~ air destroy
 
 
-$setblock ~ ~ ~ $(id)[facing=$(facing),hinge=$(hinge),open=$(open),half=lower]
-$setblock ~ ~1 ~ $(id)[facing=$(facing),hinge=$(hinge),open=$(open),half=upper]
+$setblock ~ ~ ~ $(id)[$(facing)$(hinge)$(open),half=lower]
+$setblock ~ ~1 ~ $(id)[$(facing)$(hinge)$(open),half=upper]
 
 
 # kill dropped door when door broken

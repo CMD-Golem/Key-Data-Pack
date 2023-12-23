@@ -1,5 +1,5 @@
 # store item
-execute if score #execute_code keylock matches 12..13 as @e[tag=keylock_container,distance=..0.1] run function keylock:container/lock/store
+execute if score #execute_code keylock matches 12..13 as @e[tag=keylock_container,distance=..0.1] run function keylock:container/lock/store with entity @s data.Pos
 execute unless entity @e[tag=keylock_container,distance=..0.1] run function keylock:container/lock/setup
 
 #replace chest with display

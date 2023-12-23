@@ -2,4 +2,4 @@
 execute if block ~ ~ ~ #keylock:trapgate run setblock ~ ~ ~ air
 execute unless block ~ ~ ~ #keylock:air run setblock ~ ~ ~ air destroy
 
-$setblock ~ ~ ~ $(id)[facing=$(facing),half=$(half),open=$(open)]
+$setblock ~ ~ ~ $(id)[$(facing)$(half)$(open)]

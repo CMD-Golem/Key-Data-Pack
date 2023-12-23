@@ -9,12 +9,8 @@ execute if score #enable_doors keylock matches 1 as @e[tag=keylock_door] at @s r
 execute if score #enable_doors keylock matches 1 if predicate keylock:auto_doors_check run function keylock:door/auto_door/run
 
 # trapgate checks
-execute if score #enable_trapgate keylock matches 1 as @e[tag=keylock_autogate,limit=1] at @s run function keylock:trapgate/run
+execute if score #enable_trapgate keylock matches 1 as @e[tag=keylock_trapgate] at @s run function keylock:trapgate/run
 execute if score #enable_trapgate keylock matches 1 if predicate keylock:auto_doors_check run function keylock:trapgate/auto_door/run
-
-# replace support block for falling block
-execute as @e[tag=keylock_replace_support] at @s if block ~ ~ ~ #keylock:lockable_blocks run function keylock:replace_support
-execute as @e[tag=keylock_clear_support] at @s run function keylock:clear_support
 
 # repair
 execute if score #damage keylock matches 1 as @e[predicate=keylock:repair] at @s if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:gold_ingot"}}] run function keylock:durability/detect

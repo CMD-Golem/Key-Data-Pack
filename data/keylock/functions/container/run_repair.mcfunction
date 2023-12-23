@@ -1,0 +1,1 @@
+$data modify block $(x) $(y) $(z) Items set from storage keylock:item_safe storage[{x:$(pos_x),y:$(y)d,z:$(pos_z)}].secItems

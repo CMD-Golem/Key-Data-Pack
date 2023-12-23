@@ -5,5 +5,5 @@ execute align xyz run summon block_display ~0.5 ~0.25 ~0.5 {Tags:["keylock_displ
 
 #restore block
 data modify entity @e[tag=keylock_display,sort=nearest,limit=1] block_state.Name set from entity @s data.block.id
-execute unless score @s keylock_craft matches 0..270 run data modify entity @e[tag=keylock_display,sort=nearest,limit=1] block_state.Properties.facing set from entity @s data.block.facing
+execute unless score @s keylock_craft matches 0..270 run data modify entity @e[tag=keylock_display,sort=nearest,limit=1] block_state.Properties.facing set from entity @s data.facing
 execute if score @s keylock_craft matches 0..270 store result entity @e[tag=keylock_display,sort=nearest,limit=1] Rotation[0] float 1 run scoreboard players get @s keylock_craft
