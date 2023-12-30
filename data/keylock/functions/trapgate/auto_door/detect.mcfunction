@@ -7,5 +7,5 @@ execute unless score #execute_code keylock matches 20.. if entity @s[nbt={Select
 execute if score #key_name keylock matches 1 unless score #execute_code keylock matches 20.. run function keylock:password_check
 
 # open door
-execute if score #auto_open keylock matches 1 if score #execute_code keylock matches 21 summon marker run function keylock:trapgate/auto_door/toggle
-execute if score #auto_door keylock matches 1 if score #execute_code keylock matches 20 summon marker run function keylock:trapgate/auto_door/toggle
+execute if score #open_trapgate keylock matches 1 if score #execute_code keylock matches 21 summon marker run function keylock:trapgate/auto_door/toggle
+execute if score #auto_trapgate keylock matches 1 if score #execute_code keylock matches 20 summon marker run function keylock:trapgate/auto_door/toggle
