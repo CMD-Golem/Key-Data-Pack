@@ -8,3 +8,5 @@ $setblock ~ ~ ~ $(id)[$(facing)$(hinge)$(open),half=lower]
 $setblock ~ ~1 ~ $(id)[$(facing)$(hinge)$(open),half=upper]
 
 scoreboard players set #door_found keylock 1
+
+execute as @e[type=item,distance=..1,nbt={Age:0s}] run kill @s

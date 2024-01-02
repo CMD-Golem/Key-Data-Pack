@@ -1,0 +1,2 @@
+execute if predicate keylock:get_type/top positioned ~ ~-1 ~ if entity @e[tag=keylock_door,distance=..0.1] run function keylock:door/open/close
+execute if predicate keylock:get_type/bottom if entity @e[tag=keylock_door,distance=..0.1] run function keylock:door/open/close

@@ -13,8 +13,4 @@ scoreboard objectives add keylock_use minecraft.used:minecraft.warped_fungus_on_
 scoreboard players set #5 keylock 5
 scoreboard players set #10 keylock 10
 
-#default settings
-execute unless score #default keylock matches 1 run scoreboard players set #damage keylock 1
-execute unless score #default keylock matches 1 run scoreboard players set #enable_containers keylock 1
-
-execute unless score #default keylock matches 1 run scoreboard players set #default keylock 1
+execute unless score #default keylock matches 1 run function keylock:settings/default
