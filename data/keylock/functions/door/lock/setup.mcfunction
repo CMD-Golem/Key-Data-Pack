@@ -6,6 +6,7 @@ execute as @e[tag=keylock_door,distance=..0.1] run function keylock:door/lock/st
 #password
 execute if score #key_name keylock matches 1 run data modify entity @e[tag=keylock_door,distance=..0.1,limit=1] data.password set from entity @s SelectedItem.tag.display.Name
 execute if score #key_name keylock matches 1 as @e[tag=keylock_door,distance=..0.1,nbt={data:{password:'{"text":"Key","italic":false}'}}] run data merge entity @s {data:{password:''}}
+execute if score #key_name keylock matches 1 as @e[tag=keylock_door,distance=..0.1,nbt={data:{password:'{"text":"Admin Key","italic":false}'}}] run data merge entity @s {data:{password:''}}
 
 #store lockers name
 item modify entity @s weapon.mainhand keylock:copy_name
