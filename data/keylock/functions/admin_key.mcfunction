@@ -1,0 +1,1 @@
+give @s minecraft:warped_fungus_on_a_stick[minecraft:item_name='"Admin Key"', minecraft:custom_model_data=4268953, minecraft:custom_data={keylock:{},keylock_admin:{}}] 1

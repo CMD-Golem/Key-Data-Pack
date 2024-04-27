@@ -12,7 +12,7 @@
 		"condition": "minecraft:entity_properties",
 		"entity": "this",
 		"predicate": {
-			"nbt": "{SelectedItem:{tag:{keylock:1b}}}"
+			"nbt": "{SelectedItem:{components:{'minecraft:custom_data':{keylock:{}}}}}"
 		}
 	}
 ]

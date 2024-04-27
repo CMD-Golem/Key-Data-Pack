@@ -1,9 +1,10 @@
 {
-  "function": "minecraft:set_lore",
-  "entity": "this",
-  "lore": [
-    {
-      "selector": "@s"
-    }
-  ]
+	"function": "minecraft:set_lore",
+	"entity": "this",
+	"lore": [
+		{
+			"selector": "@s"
+		}
+	],
+	"mode": "replace_all"
 }

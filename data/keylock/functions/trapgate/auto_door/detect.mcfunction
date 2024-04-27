@@ -3,7 +3,7 @@ execute unless entity @e[tag=keylock_trapgate,distance=..0.1] run scoreboard pla
 
 # check player data for locked doors
 execute if score @s keylock = @e[tag=keylock_trapgate,distance=..0.1,limit=1] keylock run scoreboard players set #execute_code keylock 20
-execute unless score #execute_code keylock matches 20.. if entity @s[nbt={SelectedItem:{tag:{keylock_admin:1b}}}] run scoreboard players set #execute_code keylock 20
+execute unless score #execute_code keylock matches 20.. if items entity @s weapon.mainhand *[minecraft:custom_data~{keylock_admin:{}}] run scoreboard players set #execute_code keylock 20
 execute if score #key_name keylock matches 1 unless score #execute_code keylock matches 20.. run function keylock:password_check
 
 # open door

@@ -4,7 +4,7 @@
 		"entity": "this",
 		"predicate": {
 			"type": "minecraft:item",
-			"nbt": "{Item:{tag:{keylock:1b}}}"
+			"nbt": "{Item:{components:{'minecraft:custom_data':{keylock:{}}}}}"
 		}
 	},
 	{
@@ -12,7 +12,7 @@
 		"offsetY": -1,
 		"predicate": {
 			"block": {
-				"tag": "minecraft:anvil"
+				"blocks": "#minecraft:anvil"
 			}
 		}
 	}
