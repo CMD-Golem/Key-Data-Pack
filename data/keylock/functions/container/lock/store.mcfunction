@@ -11,7 +11,10 @@ data modify storage keylock:item_safe temp.Items set from block ~ ~ ~ Items
 execute if data storage keylock:item_safe temp.Items[0] run data modify storage keylock:item_safe temp.secItems set from storage keylock:item_safe temp.Items
 
 execute if score #already_in_index keylock matches 0 run data modify storage keylock:item_safe storage append from storage keylock:item_safe temp
-$execute if score #already_in_index keylock matches 1 run data modify storage keylock:item_safe storage[{x:$(x)d,y:$(y)d,z:$(z)d}] set from storage keylock:item_safe temp
+$execute if score #already_in_index keylock matches 1 run data modify storage keylock:item_safe storage[{x:$(x)d,y:$(y)d,z:$(z)d}] merge from storage keylock:item_safe temp
+$execute if score #already_in_index keylock matches 1 run data remove storage keylock:item_safe storage[{x:$(x)d,y:$(y)d,z:$(z)d}].repair
+
+data remove storage keylock:item_safe temp
 
 #store id, name, set password and clear items
 data modify entity @s data.block.id set from block ~ ~ ~ id

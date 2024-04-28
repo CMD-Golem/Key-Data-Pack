@@ -1,5 +1,5 @@
 #setup
-summon minecraft:marker ~ ~ ~ {Tags:["keylock_trapgate","keylock_entity"],data:{block:{facing:"",open:"",half:""}}}
+summon minecraft:marker ~ ~ ~ {Tags:["keylock_trapgate","keylock_entity","keylock_doortrapgate"],data:{block:{facing:"",open:"",half:""}}}
 scoreboard players operation @e[tag=keylock_trapgate,distance=..0.1] keylock = @s keylock
 execute as @e[tag=keylock_trapgate,distance=..0.1] run function keylock:trapgate/lock/store
 
