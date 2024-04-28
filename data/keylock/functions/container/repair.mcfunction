@@ -15,3 +15,5 @@ execute store result storage keylock:item_safe repair.pos_x double 0.1 run score
 execute store result storage keylock:item_safe repair.pos_z double 0.1 run scoreboard players get #repair_z keylock
 
 function keylock:container/run_repair with storage keylock:item_safe repair
+
+data remove storage keylock:item_safe repair

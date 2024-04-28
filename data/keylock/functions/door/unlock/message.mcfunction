@@ -4,3 +4,5 @@ execute if score #world keylock_count matches 1.. run scoreboard players remove 
 playsound minecraft:block.iron_door.open block @s ~ ~ ~ 10 0.5
 execute unless score #message keylock matches 1 run title @s actionbar {"text":"Door has been unlocked"}
 execute if score #message keylock matches 1 run tellraw @s {"text":"Door has been unlocked"}
+
+execute if score #damage keylock matches 2..3 run function keylock:durability/durability
