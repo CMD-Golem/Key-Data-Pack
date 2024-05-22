@@ -7,7 +7,7 @@ execute if score @s keylock_count >= #max_player keylock run scoreboard players 
 execute if score #world keylock_count >= #max_world keylock run scoreboard players set #execute_code keylock 2
 #unlock trapdoor/gate
 execute if score @s keylock = @e[tag=keylock_trapgate,distance=..0.1,limit=1] keylock run scoreboard players set #execute_code keylock 20
-execute if entity @e[tag=keylock_trapgate,distance=..0.1] if items entity @s weapon.mainhand *[minecraft:custom_data~{keylock_admin:{}}] run scoreboard players set #execute_code keylock 20
+execute if entity @e[tag=keylock_trapgate,distance=..0.1] if items entity @s weapon.mainhand *[minecraft:custom_data~{keylock_admin:1b}] run scoreboard players set #execute_code keylock 20
 execute if score #key_name keylock matches 1 if score #execute_code keylock matches ..9 if entity @e[tag=keylock_trapgate,distance=..0.1] run function keylock:password_check
 
 #position

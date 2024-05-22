@@ -17,7 +17,7 @@
 			"minecraft:item_name": "\"Key\"",
 			"minecraft:custom_model_data": 4268953,
 			"minecraft:custom_data": {
-				"keylock": {}
+				"keylock": true
 			}
 		}
     }
