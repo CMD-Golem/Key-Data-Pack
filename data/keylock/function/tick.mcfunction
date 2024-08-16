@@ -14,9 +14,6 @@ execute if score #enable_trapgate keylock matches 1 if predicate keylock:auto_tr
 
 execute if predicate keylock:piston_checker as @e[tag=keylock_doortrapgate] at @s if block ~ ~ ~ minecraft:moving_piston run kill @s
 
-# repair
-execute if score #damage keylock matches 1.. as @e[predicate=keylock:repair] at @s if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:gold_ingot"}}] run function keylock:durability/detect
-
 # uuid
 execute as @a unless score @s keylock matches 0.. run function keylock:uuid
 

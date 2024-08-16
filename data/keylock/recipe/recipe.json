@@ -6,9 +6,7 @@
         " g"
     ],
     "key": {
-        "g": {
-            "item": "minecraft:gold_ingot"
-        }
+        "g": "minecraft:gold_ingot"
     },
     "result": {
         "id": "minecraft:warped_fungus_on_a_stick",
@@ -16,6 +14,10 @@
 		"components": {
 			"minecraft:item_name": "\"Key\"",
 			"minecraft:custom_model_data": 4268953,
+			"minecraft:max_damage": 400,
+			"minecraft:repairable": {
+				"items": "minecraft:gold_ingot"
+			},
 			"minecraft:custom_data": {
 				"keylock": true
 			}
