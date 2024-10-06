@@ -20,7 +20,7 @@ data remove storage keylock:item_safe temp
 data modify entity @s data.block.id set from block ~ ~ ~ id
 # data modify entity @s data.Items set from block ~ ~ ~ Items
 data modify entity @s data.CustomName set from block ~ ~ ~ CustomName
-data merge block ~ ~ ~ {Items:[],Lock:"fsjionevnbmeuwrbt0er9bvnwrenvu"}
+data merge block ~ ~ ~ {Items:[],lock:{components:{"minecraft:custom_data":{unlockable:0b}}}}
 
 # get type
 execute if predicate keylock:get_type/north run data merge entity @s {data:{block:{facing:"facing=north"},facing:"north"}}

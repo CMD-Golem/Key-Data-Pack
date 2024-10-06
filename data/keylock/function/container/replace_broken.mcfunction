@@ -2,4 +2,4 @@
 execute if block ~ ~ ~ #keylock:containers run setblock ~ ~ ~ air
 execute unless block ~ ~ ~ #keylock:air run setblock ~ ~ ~ air destroy
 
-$setblock ~ ~ ~ $(id)[$(facing)$(type)]{Lock:"fsjionevnbmeuwrbt0er9bvnwrenvu"}
+$setblock ~ ~ ~ $(id)[$(facing)$(type)]{lock:{components:{"minecraft:custom_data":{unlockable:0b}}}}
