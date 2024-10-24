@@ -6,9 +6,7 @@
         " g"
     ],
     "key": {
-        "g": {
-			"item": "minecraft:gold_ingot"
-		}
+        "g": "minecraft:gold_ingot"
     },
     "result": {
         "id": "minecraft:warped_fungus_on_a_stick",
