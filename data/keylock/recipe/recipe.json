@@ -1,19 +1,24 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "gg",
-        "gg",
-        " g"
-    ],
-    "key": {
-        "g": "minecraft:gold_ingot"
-    },
-    "result": {
-        "id": "minecraft:warped_fungus_on_a_stick",
-        "count": 1,
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"gg",
+		"gg",
+		" g"
+	],
+	"key": {
+		"g": "minecraft:gold_ingot"
+	},
+	"result": {
+		"id": "minecraft:warped_fungus_on_a_stick",
+		"count": 1,
 		"components": {
 			"minecraft:item_name": "\"Key\"",
-			"minecraft:custom_model_data": 4268953,
+			"minecraft:item_model": "minecraft:warped_fungus_on_a_stick",
+			"minecraft:custom_model_data": {
+				"strings": [
+					"cmdg_key"
+				]
+			},
 			"minecraft:max_damage": 400,
 			"minecraft:repairable": {
 				"items": "minecraft:gold_ingot"
@@ -22,5 +27,5 @@
 				"keylock": true
 			}
 		}
-    }
+	}
 }

@@ -12,6 +12,7 @@
     "minecraft:mangrove_trapdoor",
     "minecraft:bamboo_trapdoor",
     "minecraft:cherry_trapdoor",
+	"minecraft:pale_oak_trapdoor",
 	"minecraft:iron_trapdoor",
     "minecraft:copper_trapdoor",
     "minecraft:exposed_copper_trapdoor",
@@ -31,6 +32,7 @@
     "minecraft:warped_fence_gate",
     "minecraft:mangrove_fence_gate",
     "minecraft:bamboo_fence_gate",
-    "minecraft:cherry_fence_gate"
+    "minecraft:cherry_fence_gate",
+	"minecraft:pale_oak_fence_gate"
   ]
 }
