@@ -30,9 +30,9 @@ execute if score #execute_code keylock matches 20 run function keylock:door/unlo
 execute if score #execute_code keylock matches ..9 run playsound minecraft:block.chest.locked block @s ~ ~ ~ 10 1
 
 # not your door
-execute if score #execute_code keylock matches 0 if score #message keylock matches 1 run tellraw @s ["",{"text":"Door is locked by "},{"selector":"@e[tag=keylock_door,distance=..0.1,limit=1]"}]
-execute if score #execute_code keylock matches 0 unless score #message keylock matches 1 run title @s actionbar ["",{"text":"Door is locked by "},{"selector":"@e[tag=keylock_door,distance=..0.1,limit=1]"}]
+execute if score #execute_code keylock matches 0 if score #message keylock matches 1 run tellraw @s [{text:"Door is locked by "},{selector:"@e[tag=keylock_door,distance=..0.1,limit=1]"}]
+execute if score #execute_code keylock matches 0 unless score #message keylock matches 1 run title @s actionbar [{text:"Door is locked by "},{selector:"@e[tag=keylock_door,distance=..0.1,limit=1]"}]
 
 # max count of locked door reached
-execute if score #execute_code keylock matches 1 unless score #message keylock matches 1 run title @s actionbar {"text":"You have reached the maximum number of locked blocks"}
-execute if score #execute_code keylock matches 1 if score #message keylock matches 1 run tellraw @s {"text":"You have reached the maximum number of locked blocks"}
+execute if score #execute_code keylock matches 1 unless score #message keylock matches 1 run title @s actionbar {text:"You have reached the maximum number of locked blocks"}
+execute if score #execute_code keylock matches 1 if score #message keylock matches 1 run tellraw @s {text:"You have reached the maximum number of locked blocks"}

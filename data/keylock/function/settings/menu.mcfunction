@@ -18,25 +18,25 @@
 #auto_trapgate: unlock trapdoors and fence gates when near (1)
 
 #show main menu
-tellraw @s {"text":""}
-tellraw @s {"text":""}
-tellraw @s {"text":""}
-tellraw @s {"text":""}
-tellraw @s {"text":""}
-tellraw @s {"text":""}
+tellraw @s {text:""}
+tellraw @s {text:""}
+tellraw @s {text:""}
+tellraw @s {text:""}
+tellraw @s {text:""}
+tellraw @s {text:""}
 
 
-tellraw @s {"text":"Key Lock Settings","bold":true}
+tellraw @s {text:"Key Lock Settings","bold":true}
 
-tellraw @s {"text":""}
-tellraw @s ["",{"text":"[ 🗁 ]","color":"blue","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 10"}},{"text":" General Settings"}]
-tellraw @s ["",{"text":"[ 🗁 ]","color":"blue","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 50"}},{"text":" Key Damage Settings"}]
-tellraw @s ["",{"text":"[ 🗁 ]","color":"blue","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 20"}},{"text":" Container Settings"}]
-tellraw @s ["",{"text":"[ 🗁 ]","color":"blue","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 30"}},{"text":" Door Settings"}]
-tellraw @s ["",{"text":"[ 🗁 ]","color":"blue","clickEvent":{"action":"run_command","value":"/scoreboard players set @s keylock_settings 40"}},{"text":" Trapdoor and Fence Gate Settings"}]
+tellraw @s {text:""}
+tellraw @s [{text:"[ 🗁 ]",color:"blue",click_event:{action:"run_command",command:"/scoreboard players set @s keylock_settings 10"}},{text:" General Settings",color:"white"}]
+tellraw @s [{text:"[ 🗁 ]",color:"blue",click_event:{action:"run_command",command:"/scoreboard players set @s keylock_settings 50"}},{text:" Key Damage Settings",color:"white"}]
+tellraw @s [{text:"[ 🗁 ]",color:"blue",click_event:{action:"run_command",command:"/scoreboard players set @s keylock_settings 20"}},{text:" Container Settings",color:"white"}]
+tellraw @s [{text:"[ 🗁 ]",color:"blue",click_event:{action:"run_command",command:"/scoreboard players set @s keylock_settings 30"}},{text:" Door Settings",color:"white"}]
+tellraw @s [{text:"[ 🗁 ]",color:"blue",click_event:{action:"run_command",command:"/scoreboard players set @s keylock_settings 40"}},{text:" Trapdoor and Fence Gate Settings",color:"white"}]
 
-tellraw @s {"text":""}
-tellraw @s {"text":""}
+tellraw @s {text:""}
+tellraw @s {text:""}
 
 #run submenus
 execute unless score @s keylock_settings matches 20..59 run function keylock:settings/general
