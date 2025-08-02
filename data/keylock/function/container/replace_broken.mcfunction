@@ -3,3 +3,4 @@ execute if block ~ ~ ~ #keylock:containers run setblock ~ ~ ~ air
 execute unless block ~ ~ ~ #keylock:air run setblock ~ ~ ~ air destroy
 
 $setblock ~ ~ ~ $(id)[$(facing)$(type)]{Lock:"fsjionevnbmeuwrbt0er9bvnwrenvu"}
+execute if data entity @s data.keep_inventory run loot insert ~ ~ ~ loot keylock:keep_inventory
