@@ -3,6 +3,7 @@
   "values": [
     "minecraft:barrel",
     "minecraft:chest",
-    "minecraft:trapped_chest"
+    "minecraft:trapped_chest",
+	"minecraft:shulker_box"
   ]
 }
