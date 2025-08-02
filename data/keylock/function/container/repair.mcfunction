@@ -1,4 +1,4 @@
-execute unless predicate keylock:items_in_container run function keylock:container/unlock/drop
+execute unless predicate keylock:items_in_container unless data entity @s data.keep_inventory run function keylock:container/unlock/drop
 
 $scoreboard players set #repair_x keylock $(x)
 $scoreboard players set #repair_z keylock $(z)
