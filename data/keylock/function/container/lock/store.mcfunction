@@ -17,7 +17,10 @@ $execute if score #already_in_index keylock matches 1 run data remove storage ke
 data remove storage keylock:item_safe temp
 
 #store id, name, set password and clear items
-data modify entity @s data.block.id set from block ~ ~ ~ id
+loot spawn ~ ~ ~ mine ~ ~ ~ minecraft:netherite_pickaxe[minecraft:enchantments={"minecraft:silk_touch":5}]
+data modify entity @s data.block.id set from entity @e[type=item,limit=1,distance=..0.4,nbt={Age:0s}] Item.id
+kill @e[type=item,limit=1,distance=..0.5,nbt={Age:0s}]
+# data modify entity @s data.block.id set from block ~ ~ ~ id
 data modify entity @s data.CustomName set from block ~ ~ ~ CustomName
 data merge block ~ ~ ~ {Items:[],lock:{components:{"minecraft:custom_data":{unlockable:0b}}}}
 
