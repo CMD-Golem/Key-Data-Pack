@@ -4,6 +4,7 @@ data remove block ~ ~ ~ lock
 # data modify block ~ ~ ~ Items set from entity @s data.Items
 data modify block ~ ~ ~ CustomName set from entity @s data.CustomName
 
+execute if data entity @s data.keep_inventory run data modify block ~ ~ ~ Items set value []
 $data modify block ~ ~ ~ Items set from storage keylock:item_safe storage[{x:$(x)d,y:$(y)d,z:$(z)d}].Items
 
 #remove items from storage if no longer needed
