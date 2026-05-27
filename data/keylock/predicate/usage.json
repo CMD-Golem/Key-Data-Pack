@@ -12,7 +12,15 @@
 		"condition": "minecraft:entity_properties",
 		"entity": "this",
 		"predicate": {
-			"nbt": "{SelectedItem:{components:{'minecraft:custom_data':{keylock:true}}}}"
+			"equipment": {
+				"mainhand": {
+					"components": {
+						"minecraft:custom_data": {
+							"keylock": true
+						}
+					}
+				}
+			}
 		}
 	}
 ]
