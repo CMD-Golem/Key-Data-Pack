@@ -13,7 +13,7 @@
 		"count": 1,
 		"components": {
 			"minecraft:item_name": "\"Key\"",
-			"minecraft:item_model": "minecraft:warped_fungus_on_a_stick",
+			"minecraft:item_model": "minecraft:tripwire_hook",
 			"minecraft:custom_model_data": {
 				"strings": [
 					"cmdg_key"

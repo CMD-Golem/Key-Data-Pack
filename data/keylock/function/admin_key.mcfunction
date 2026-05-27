@@ -1,1 +1,1 @@
-give @s minecraft:warped_fungus_on_a_stick[minecraft:item_name='"Admin Key"', minecraft:item_model="minecraft:warped_fungus_on_a_stick", custom_model_data={strings:["cmdg_key"]}, minecraft:custom_data={keylock:1b,keylock_admin:1b}, minecraft:unbreakable={}] 1
+give @s minecraft:warped_fungus_on_a_stick[minecraft:item_name='"Admin Key"', minecraft:item_model="minecraft:tripwire_hook", custom_model_data={strings:["cmdg_key"]}, minecraft:custom_data={keylock:1b,keylock_admin:1b}, minecraft:unbreakable={}] 1
