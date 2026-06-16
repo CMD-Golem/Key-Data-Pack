@@ -14,7 +14,7 @@
 		"predicate": {
 			"equipment": {
 				"mainhand": {
-					"components": {
+					"predicates": {
 						"minecraft:custom_data": {
 							"keylock": true
 						}
