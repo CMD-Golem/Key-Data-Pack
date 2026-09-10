@@ -3,28 +3,31 @@
 		"requirement": {
 			"trigger": "minecraft:default_block_use",
 			"conditions": {
-				"location": [
-					{
-						"condition": "minecraft:value_check",
-						"value": {
-							"type": "minecraft:score",
-							"target": {
-								"type": "minecraft:fixed",
-								"name": "#enable_trapgate"
+				"location": {
+					"type": "minecraft:all_of",
+					"terms": [
+						{
+							"type": "minecraft:int_value_check",
+							"value": {
+								"type": "minecraft:score",
+								"target": {
+									"type": "minecraft:fixed",
+									"name": "#enable_trapgate"
+								},
+								"score": "keylock"
 							},
-							"score": "keylock"
+							"test": 1
 						},
-						"range": 1
-					},
-					{
-						"condition": "minecraft:location_check",
-						"predicate": {
-							"block": {
-								"blocks": "#keylock:trapgate"
+						{
+							"type": "minecraft:location_check",
+							"predicate": {
+								"block": {
+									"blocks": "#keylock:trapgate"
+								}
 							}
 						}
-					}
-				]
+					]
+				}
 			}
 		}
 	},
