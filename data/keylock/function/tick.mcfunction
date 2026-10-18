@@ -12,8 +12,6 @@ execute if score #enable_doors keylock matches 1 if predicate keylock:auto_doors
 execute if score #enable_trapgate keylock matches 1 as @e[tag=keylock_trapgate] at @s run function keylock:trapgate/run
 execute if score #enable_trapgate keylock matches 1 if predicate keylock:auto_trapgate run function keylock:trapgate/auto_door/run
 
-execute if predicate keylock:piston_checker as @e[tag=keylock_doortrapgate] at @s if block ~ ~ ~ minecraft:moving_piston run kill @s
-
 # uuid
 execute as @a unless score @s keylock matches 0.. run function keylock:uuid
 

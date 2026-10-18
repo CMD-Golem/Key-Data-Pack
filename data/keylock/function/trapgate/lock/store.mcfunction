@@ -9,10 +9,6 @@ execute if predicate keylock:get_type/east run data merge entity @s {data:{block
 execute if predicate keylock:get_type/south run data merge entity @s {data:{block:{facing:"facing=south"}}}
 execute if predicate keylock:get_type/west run data merge entity @s {data:{block:{facing:"facing=west"}}}
 
-#store open
-execute if predicate keylock:get_type/closed run data merge entity @s {data:{block:{open:",open=false"}}}
-execute if predicate keylock:get_type/open run data merge entity @s {data:{block:{open:",open=true"}}}
-
 #store half
 execute if predicate keylock:get_type/bottom run data merge entity @s {data:{block:{half:",half=bottom"}}}
 execute if predicate keylock:get_type/top run data merge entity @s {data:{block:{half:",half=top"}}}

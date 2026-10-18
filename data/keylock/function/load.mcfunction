@@ -14,3 +14,11 @@ scoreboard players set #5 keylock 5
 scoreboard players set #10 keylock 10
 
 execute unless score #default keylock matches 1 run function keylock:settings/default
+
+# #execute_code keylock (at least for doors and trapgates)
+# 0: default value
+# 1: maximum count of locked blocks of player reached
+# 2: maximum count of locked blocks in world reached
+# 10: block isnt locked
+# 20: identity check passed
+# 21: identity check passed (block wasnt locked)

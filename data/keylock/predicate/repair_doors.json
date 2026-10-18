@@ -1,0 +1,92 @@
+{
+	"type": "minecraft:all_of",
+	"terms": [
+		{
+			"type": "minecraft:any_of",
+			"terms": [
+				{
+					"type": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"state": {
+								"powered": "true"
+							}
+						}
+					}
+				},
+				{
+					"type": "minecraft:all_of",
+					"terms": [
+						{
+							"type": "minecraft:location_check",
+							"predicate": {
+								"block": {
+									"state": {
+										"open": "true"
+									}
+								}
+							}
+						},
+						{
+							"type": "minecraft:entity_properties",
+							"entity": "this",
+							"predicate": {
+								"minecraft:entity_tags": {
+									"none_of": [
+										"keylock_unlocked"
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:inverted",
+					"term": {
+						"type": "minecraft:location_check",
+						"predicate": {
+							"block": {
+								"blocks": "#keylock:doors"
+							}
+						}
+					}
+				}
+			]
+		},
+		{
+			"type": "minecraft:inverted",
+			"term": {
+				"type": "minecraft:location_check",
+				"offsetY": -1,
+				"predicate": {
+					"block": {
+						"blocks": "#keylock:air"
+					}
+				}
+			}
+		},
+		{
+			"type": "minecraft:inverted",
+			"term": {
+				"type": "minecraft:location_check",
+				"predicate": {
+					"block": {
+						"blocks": "minecraft:moving_piston"
+					}
+				}
+			}
+		},
+		{
+			"type": "minecraft:inverted",
+			"term": {
+				"type": "minecraft:location_check",
+				"offsetY": 1,
+				"predicate": {
+					"block": {
+						"blocks": "minecraft:moving_piston"
+					}
+				}
+			}
+		}
+	]
+}
