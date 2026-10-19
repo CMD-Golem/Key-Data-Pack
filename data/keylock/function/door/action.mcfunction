@@ -1,3 +1,4 @@
+# as used key at door
 scoreboard players set #execute_code keylock 0
 
 #lock door

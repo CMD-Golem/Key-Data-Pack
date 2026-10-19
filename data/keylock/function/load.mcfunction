@@ -22,3 +22,13 @@ execute unless score #default keylock matches 1 run function keylock:settings/de
 # 10: block isnt locked
 # 20: identity check passed
 # 21: identity check passed (block wasnt locked)
+
+# Tags:
+# - keylock_entity: Used on all entities of the pack, not keylock_autodoor
+# - Doors/Trapdoors/Fence Gates:
+#   - keylock_door: Locked door
+#   - keylock_autodoor: Mark autoopened doors, is killed when door gets closed again
+#   - keylock_trapgate: Locked trapgate
+#   - keylock_autogate: Mark autoopened trapgates, is killed when door gets closed again
+#   - keylock_autounlocked: Locked door/trapdoor which has been autoopened
+#   - keylock_closed: Locked door/trapdoor which was not auto opened because it is closed

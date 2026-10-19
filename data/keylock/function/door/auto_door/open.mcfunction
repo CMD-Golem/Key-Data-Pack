@@ -1,3 +1,4 @@
+# as @a at door
 # find other side of double door
 scoreboard players set #toggle_auto keylock 1
 function keylock:door/double/detect

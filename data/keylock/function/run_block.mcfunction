@@ -1,3 +1,4 @@
+# as used key at block
 execute if score #enable_containers keylock matches 1 unless score #execute_code keylock matches 0.. if block ~ ~ ~ #keylock:containers run function keylock:container/action
 execute if score #enable_containers keylock matches 1 unless score #execute_code keylock matches 0.. if entity @e[tag=keylock_container,distance=..0.1] run function keylock:container/action
 

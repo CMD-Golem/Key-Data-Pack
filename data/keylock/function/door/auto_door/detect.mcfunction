@@ -1,3 +1,4 @@
+# as @a at door
 # autounlock door if not locked
 execute unless entity @e[tag=keylock_door,distance=..0.1] run scoreboard players set #execute_code keylock 21
 

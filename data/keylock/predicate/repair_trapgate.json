@@ -33,7 +33,7 @@
 							"predicate": {
 								"minecraft:entity_tags": {
 									"none_of": [
-										"keylock_autogate"
+										"keylock_autounlocked"
 									]
 								}
 							}

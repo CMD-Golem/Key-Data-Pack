@@ -1,3 +1,4 @@
+# as player who opened a door at door
 # close opened doors when they are locked
 execute if predicate keylock:get_type/upper positioned ~ ~-1 ~ if entity @e[tag=keylock_door,tag=!keylock_closed,distance=..0.1] run function keylock:door/open/close
 execute unless predicate keylock:get_type/upper if entity @e[tag=keylock_door,tag=!keylock_closed,distance=..0.1] run function keylock:door/open/close

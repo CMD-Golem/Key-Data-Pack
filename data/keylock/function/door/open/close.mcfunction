@@ -1,3 +1,4 @@
+# as player who opened a door at door
 execute as @e[tag=keylock_door,distance=..0.1] run function keylock:door/replace_broken with entity @s data.block
 execute as @e[tag=keylock_door,distance=..0.1] run tag @s add keylock_closed
 

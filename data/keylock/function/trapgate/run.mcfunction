@@ -1,3 +1,4 @@
+# as keylock_trapgate
 # remove lock when piston moves door
 execute if block ~ ~ ~ minecraft:moving_piston run kill @s
 # repair trapgate when needed

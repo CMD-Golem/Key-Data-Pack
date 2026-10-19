@@ -1,3 +1,4 @@
+# at 0 0 0
 execute if score #execute_code keylock matches 0.. run scoreboard players reset #execute_code keylock
 
 execute as @a at @s anchored eyes run function keylock:trapgate/auto_door/check

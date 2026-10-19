@@ -26,5 +26,5 @@ execute if score #execute_code keylock matches 0 if score #message keylock match
 execute if score #execute_code keylock matches 0 unless score #message keylock matches 1 run title @s actionbar [{text:"Container is locked by "},{selector:"@e[tag=keylock_container,distance=..0.1,limit=1]"}]
 
 # max count of locked containers reached
-execute if score #execute_code keylock matches 1 unless score #message keylock matches 1 run title @s actionbar {text:"You have reached the maximum number of locked blocks"}
-execute if score #execute_code keylock matches 1 if score #message keylock matches 1 run tellraw @s {text:"You have reached the maximum number of locked blocks"}
+execute if score #execute_code keylock matches 1..2 unless score #message keylock matches 1 run title @s actionbar {text:"You have reached the maximum number of locked blocks"}
+execute if score #execute_code keylock matches 1..2 if score #message keylock matches 1 run tellraw @s {text:"You have reached the maximum number of locked blocks"}

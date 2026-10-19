@@ -1,3 +1,4 @@
+# as keylock_door at @s
 # remove blocks if there was one at same spot as display
 execute if block ~ ~ ~ #keylock:doors run setblock ~ ~ ~ air strict
 execute if block ~ ~1 ~ #keylock:doors run setblock ~ ~ ~ air strict

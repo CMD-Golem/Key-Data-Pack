@@ -1,3 +1,4 @@
+# as player who opened a door
 advancement revoke @s only keylock:click_door
 scoreboard players reset #door_found keylock
 

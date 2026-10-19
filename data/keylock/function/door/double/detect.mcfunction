@@ -1,4 +1,5 @@
-#store current door position
+# as @a at door
+# store current door position for autoopening unlocked double door
 execute if predicate keylock:get_type/open run scoreboard players set #open_status keylock 1
 execute if predicate keylock:get_type/closed run scoreboard players set #open_status keylock 0
 
