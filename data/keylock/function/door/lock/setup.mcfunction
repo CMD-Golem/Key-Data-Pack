@@ -1,6 +1,6 @@
 # as used key at door
 #setup
-summon minecraft:marker ~ ~ ~ {Tags:["keylock_door","keylock_entity"],data:{block:{facing:"",hinge:"",open:",open=false"}}}
+summon minecraft:marker ~ ~ ~ {Tags:["keylock_door","keylock_locked"],data:{block:{facing:"",hinge:"",open:",open=false"}}}
 scoreboard players operation @e[tag=keylock_door,distance=..0.1] keylock = @s keylock
 execute as @e[tag=keylock_door,distance=..0.1] run function keylock:door/lock/store
 

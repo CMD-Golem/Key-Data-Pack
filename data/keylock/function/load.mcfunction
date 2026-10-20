@@ -20,15 +20,27 @@ execute unless score #default keylock matches 1 run function keylock:settings/de
 # 1: maximum count of locked blocks of player reached
 # 2: maximum count of locked blocks in world reached
 # 10: block isnt locked
-# 20: identity check passed
-# 21: identity check passed (block wasnt locked)
+# old: 20: identity check passed
+# old: 21: identity check passed (block wasnt locked)
+
+# 19: identity check passed (block wasnt locked)
+# 20: identity check passed, password matched
+# 21: identity check passed, id matched
+# 22: identity check passed, admin key used
 
 # Tags:
-# - keylock_entity: Used on all entities of the pack, not keylock_autodoor
+# - keylock_locked: All locked blocks
+# - keylock_autoopened: Mark autoopened blocks, is killed when door gets closed again
+# - keylock_autounlocked: Locked blocks which have been autoopened
 # - Doors/Trapdoors/Fence Gates:
 #   - keylock_door: Locked door
 #   - keylock_autodoor: Mark autoopened doors, is killed when door gets closed again
 #   - keylock_trapgate: Locked trapgate
 #   - keylock_autogate: Mark autoopened trapgates, is killed when door gets closed again
-#   - keylock_autounlocked: Locked door/trapdoor which has been autoopened
 #   - keylock_closed: Locked door/trapdoor which was not auto opened because it is closed
+# - chests
+#   - keylock_container: Locked containers
+#   - keylock_drophopperitems: Chest minecart to get items inside locked chest
+#   - keylock_isdisplay: Container uses visual display
+#   - keylock_display: Visual display container
+#   - keylock_padlock: Visual padlock, unused

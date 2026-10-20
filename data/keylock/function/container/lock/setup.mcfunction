@@ -1,5 +1,5 @@
 #setup
-summon minecraft:marker ~ ~ ~ {Tags:["keylock_container","keylock_entity"],data:{block:{facing:"",type:""}}}
+summon minecraft:marker ~ ~ ~ {Tags:["keylock_container","keylock_locked"],data:{block:{facing:"",type:""}}}
 scoreboard players operation @e[tag=keylock_container,distance=..0.1] keylock = @s keylock
 
 execute as @e[tag=keylock_container,distance=..0.1] run function keylock:container/lock/store_pos
