@@ -1,16 +1,16 @@
 # key use
-execute as @a[predicate=keylock:usage] at @s anchored eyes run function keylock:detect
+execute as @a[predicate=keylock:usage] at @s anchored eyes run function keylock:1_find_focused_block
 
 # container checks
 execute if score #enable_containers keylock matches 1 as @e[tag=keylock_container] run function keylock:container/run
 
 # door checks
 execute if score #enable_doors keylock matches 1 as @e[tag=keylock_door] at @s run function keylock:door/run
-execute if score #enable_doors keylock matches 1 if predicate keylock:auto_doors run function keylock:door/auto_door/run
+# execute if score #enable_doors keylock matches 1 if predicate keylock:auto_doors run function keylock:door/auto_door/run
 
 # trapgate checks
 execute if score #enable_trapgate keylock matches 1 as @e[tag=keylock_trapgate] at @s run function keylock:trapgate/run
-execute if score #enable_trapgate keylock matches 1 if predicate keylock:auto_trapgate run function keylock:trapgate/auto_door/run
+# execute if score #enable_trapgate keylock matches 1 if predicate keylock:auto_trapgate run function keylock:trapgate/auto_door/run
 
 # uuid
 execute as @a unless score @s keylock matches 0.. run function keylock:uuid

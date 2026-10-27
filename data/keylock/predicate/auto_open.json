@@ -1,0 +1,65 @@
+{
+	"type": "minecraft:any_of",
+	"terms": [
+		{
+			"type": "minecraft:int_value_check",
+			"value": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#auto_doors"
+				},
+				"score": "keylock"
+			},
+			"test": 1
+		},
+		{
+			"type": "minecraft:int_value_check",
+			"value": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#open_doors"
+				},
+				"score": "keylock"
+			},
+			"test": 1
+		},
+		{
+			"type": "minecraft:int_value_check",
+			"value": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#auto_trapgate"
+				},
+				"score": "keylock"
+			},
+			"test": 1
+		},
+		{
+			"type": "minecraft:int_value_check",
+			"value": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#open_trapgate"
+				},
+				"score": "keylock"
+			},
+			"test": 1
+		},
+		{
+			"type": "minecraft:int_value_check",
+			"value": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#auto_containers"
+				},
+				"score": "keylock"
+			},
+			"test": 1
+		}
+	]
+}

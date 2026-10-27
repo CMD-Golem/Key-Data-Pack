@@ -7,6 +7,8 @@ execute if score @s keylock_settings matches 25 run scoreboard players set #cont
 execute if score @s keylock_settings matches 26 run scoreboard players set #container_type keylock 1
 execute if score @s keylock_settings matches 27 run scoreboard players set #container_type keylock 2
 
+execute if score @s keylock_settings matches 24 run function keylock:auto_open/1_run
+
 # message
 tellraw @s {text:"Container Settings"}
 tellraw @s {text:""}

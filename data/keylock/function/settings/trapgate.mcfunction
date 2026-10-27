@@ -5,6 +5,9 @@ execute if score @s keylock_settings matches 44 run scoreboard players set #open
 execute if score @s keylock_settings matches 45 run scoreboard players set #auto_trapgate keylock 0
 execute if score @s keylock_settings matches 46 run scoreboard players set #auto_trapgate keylock 1
 
+execute if score @s keylock_settings matches 44 run function keylock:auto_open/1_run
+execute if score @s keylock_settings matches 46 run function keylock:auto_open/1_run
+
 # message
 tellraw @s {text:"Trapdoor and Fence Gate Settings"}
 tellraw @s {text:""}

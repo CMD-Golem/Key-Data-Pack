@@ -15,6 +15,9 @@ scoreboard players set #10 keylock 10
 
 execute unless score #default keylock matches 1 run function keylock:settings/default
 
+# slow running functions
+execute if predicate keylock:auto_open run function keylock:auto_open/1_run
+
 # #execute_code keylock (at least for doors and trapgates)
 # 0: default value
 # 1: maximum count of locked blocks of player reached
