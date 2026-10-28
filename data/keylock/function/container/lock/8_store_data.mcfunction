@@ -1,4 +1,7 @@
+# as keylock_container at @s
 tag @s remove keylock_autounlocked
+tag @s remove keylock_unlocked
+execute if score #container_type keylock matches 2 run tag @s add keylock_needsdisplay
 
 #upload items in storage
 $execute store success score #already_in_index keylock run data get storage keylock:item_safe storage[{x:$(x)d,y:$(y)d,z:$(z)d}]

@@ -1,0 +1,7 @@
+{
+	"replace": false,
+	"values": [
+		"#keylock:doors",
+		"#keylock:trapgate"
+	]
+}

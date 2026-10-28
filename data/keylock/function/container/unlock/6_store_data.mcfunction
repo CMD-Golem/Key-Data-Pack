@@ -1,5 +1,5 @@
 # as keylock_container at @s
-execute unless entity @s[tag=keylock_autounlocked] unless predicate keylock:items_in_container unless data entity @s data.keep_inventory run function keylock:container/unlock/drop
+execute unless predicate keylock:items_in_container unless data entity @s data.keep_inventory run function keylock:container/unlock/drop
 
 data remove block ~ ~ ~ lock
 # data modify block ~ ~ ~ Items set from entity @s data.Items

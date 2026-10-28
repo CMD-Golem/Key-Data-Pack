@@ -8,10 +8,12 @@ execute unless score #execute_code keylock matches 20.. if items entity @s weapo
 execute if score #key_name keylock matches 1 unless score #execute_code keylock matches 20.. run function keylock:password_check
 
 # open blocks
-execute if score #auto_containers keylock matches 1 if score #execute_code keylock matches 20.. as @e[tag=keylock_container,distance=..0.1] run function keylock:container/unlock/check
+execute if score #auto_containers keylock matches 1 if score #execute_code keylock matches 20.. as @e[tag=keylock_container,distance=..0.1] run function keylock:container/unlock/4_find_double
 
 execute if score #open_trapgate keylock matches 1 if score #execute_code keylock matches 19 summon marker run function keylock:trapgate/auto_door/toggle
 execute if score #auto_trapgate keylock matches 1 if score #execute_code keylock matches 20.. as @e[tag=keylock_trapgate,distance=..0.1] run function keylock:trapgate/auto_door/toggle
 
 execute if score #open_doors keylock matches 1 if score #execute_code keylock matches 19 run function keylock:door/auto_door/open
 execute if score #auto_doors keylock matches 1 if score #execute_code keylock matches 20.. as @e[tag=keylock_door,distance=..0.1] run function keylock:door/auto_door/open
+
+execute if score #execute_code keylock matches 20.. as @e[tag=keylock_locked,distance=..0.1] run tag @s add keylock_autounlocked

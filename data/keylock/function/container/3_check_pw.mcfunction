@@ -1,23 +1,29 @@
+# as used key at block
 scoreboard players set #execute_code keylock 0
 
 #lock container
-execute unless entity @e[tag=keylock_container,distance=..0.1] unless entity @e[tag=keylock_autounlocked,distance=..0.1] run scoreboard players set #execute_code keylock 10
+execute unless entity @e[tag=keylock_container,distance=..0.1] run scoreboard players set #execute_code keylock 10
+execute if entity @e[tag=keylock_container,tag=keylock_unlocked,distance=..0.1] run scoreboard players set #execute_code keylock 11
+
 #prevent locking if max locked container reached
 execute if score @s keylock_count >= #max_player keylock run scoreboard players set #execute_code keylock 1
 execute if score #world keylock_count >= #max_world keylock run scoreboard players set #execute_code keylock 2
+
 #unlock container
-execute if score @s keylock = @e[tag=keylock_container,distance=..0.1,limit=1] keylock run scoreboard players set #execute_code keylock 20
-execute if score #execute_code keylock matches ..9 if entity @e[tag=keylock_container,distance=..0.1] if items entity @s weapon.mainhand *[minecraft:custom_data~{keylock_admin:1b}] run scoreboard players set #execute_code keylock 20
-execute if score #key_name keylock matches 1 if score #execute_code keylock matches ..9 if entity @e[tag=keylock_container,distance=..0.1] run function keylock:password_check
+execute if score @s keylock = @e[tag=keylock_container,tag=!keylock_unlocked,distance=..0.1,limit=1] keylock run scoreboard players set #execute_code keylock 21
+execute if score #execute_code keylock matches ..9 if entity @e[tag=keylock_container,tag=!keylock_unlocked,distance=..0.1] if items entity @s weapon.mainhand *[minecraft:custom_data~{keylock_admin:1b}] run scoreboard players set #execute_code keylock 22
+execute if score #key_name keylock matches 1 if score #execute_code keylock matches ..9 if entity @e[tag=keylock_container,tag=!keylock_unlocked,distance=..0.1] run function keylock:password_check
 
 #execute codes
-execute if score #execute_code keylock matches 10 run function keylock:container/lock/check
-execute if score #execute_code keylock matches 20 as @e[tag=keylock_container,distance=..0.1] run function keylock:container/unlock/check
+tellraw @a {"score":{"name":"#execute_code","objective":"keylock"}}
+execute if score #execute_code keylock matches 10..11 run function keylock:container/lock/4_find_double
+execute if score #execute_code keylock matches 20.. as @e[tag=keylock_container,distance=..0.1] run function keylock:container/unlock/4_find_double
 
+execute if score #execute_code keylock matches 21 as @e[tag=keylock_container,distance=..0.1] run kill @s
 
 ## message
-execute if score #execute_code keylock matches 10..13 run function keylock:container/lock/message
-execute if score #execute_code keylock matches 20 run function keylock:container/unlock/message
+execute if score #execute_code keylock matches 10..11 run function keylock:container/lock/message
+execute if score #execute_code keylock matches 20.. run function keylock:container/unlock/message
 
 execute if score #execute_code keylock matches ..9 run playsound minecraft:block.chest.locked block @s ~ ~ ~ 10 1
 
